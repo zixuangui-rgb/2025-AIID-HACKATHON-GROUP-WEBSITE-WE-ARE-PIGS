@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Being Up To Date Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Pacifico&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./BUTDA_files/all.min.css">
+<script src="./BUTDA_files/saved_resource"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#0A68FF',
+secondary: '#22A0FF',
+dark: '#0A2A6B',
+light: '#E8F1FF',
+success: '#28C76F'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+'DEFAULT': '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+font-family: 'Inter', sans-serif;
+min-height: 1024px;
+background-color: #FFFFFF;
+}
+.font-logo {
+font-family: 'Pacifico', serif;
+}
+.hero-bg {
+background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('https://ai-public.mastergo.com/ai/img_res/3ac2f16c579a9e78f9dd6bff85c4ad68.jpg') no-repeat center center;
+background-size: cover;
+position: relative;
+overflow: hidden;
+}
+.glass-card {
+backdrop-filter: blur(10px);
+background: rgba(255, 255, 255, 0.7);
+border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.feature-icon {
+width: 64px;
+height: 64px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.step-icon {
+width: 48px;
+height: 48px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.testimonial-card {
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.footer-link {
+color: #0A2A6B;
+transition: color 0.2s;
+}
+.footer-link:hover {
+color: #0A68FF;
+}
+
+/* Hero Section Animations */
+.hero-bg {
+opacity: 0;
+animation: heroBackgroundFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroBackgroundFadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+.hero-headline {
+transform: translateY(40px);
+opacity: 0;
+animation: headlineSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes headlineSlideUp {
+from {
+transform: translateY(40px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.hero-subtext {
+transform: translateY(20px);
+opacity: 0;
+animation: subtextFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+}
+
+@keyframes subtextFadeIn {
+from {
+transform: translateY(20px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.hero-description {
+transform: translateY(20px);
+opacity: 0;
+animation: descriptionFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+}
+
+@keyframes descriptionFadeIn {
+from {
+transform: translateY(20px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.hero-cta-container {
+transform: scale(0.95);
+opacity: 0;
+animation: ctaScaleUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 1.1s forwards;
+}
+
+@keyframes ctaScaleUp {
+from {
+transform: scale(0.95);
+opacity: 0;
+}
+to {
+transform: scale(1);
+opacity: 1;
+}
+}
+
+.hero-cta {
+background: linear-gradient(135deg, #0A68FF 0%, #22A0FF 100%);
+box-shadow: 0 4px 15px rgba(10, 104, 255, 0.3);
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+}
+
+.hero-cta::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, #22A0FF 0%, #0A68FF 100%);
+transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+z-index: 1;
+}
+
+.hero-cta:hover::before {
+left: 0;
+}
+
+.hero-cta:hover {
+box-shadow: 0 6px 20px rgba(10, 104, 255, 0.4);
+transform: translateY(-1px);
+}
+
+.hero-cta span {
+position: relative;
+z-index: 2;
+}
+
+/* Parallax background elements */
+.parallax-card {
+position: absolute;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.parallax-card-1 {
+width: 120px;
+height: 80px;
+top: 15%;
+left: 10%;
+transform: translateZ(-100px) scale(1.1);
+}
+
+.parallax-card-2 {
+width: 90px;
+height: 120px;
+top: 25%;
+right: 15%;
+transform: translateZ(-150px) scale(1.15);
+}
+
+.parallax-card-3 {
+width: 140px;
+height: 60px;
+bottom: 30%;
+left: 20%;
+transform: translateZ(-80px) scale(1.05);
+}
+
+.parallax-card-4 {
+width: 80px;
+height: 100px;
+bottom: 20%;
+right: 25%;
+transform: translateZ(-120px) scale(1.1);
+}
+
+/* Hero exit animation on scroll */
+.hero-exit {
+transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-exit.scrolled {
+opacity: 0.6;
+transform: translateY(-20px);
+}
+
+/* Challenges Section Animations */
+.challenges-section {
+opacity: 0;
+}
+
+.challenges-section.visible {
+opacity: 1;
+}
+
+.challenges-title {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.5s ease-out-quad;
+}
+
+.challenges-section.visible .challenges-title {
+opacity: 1;
+transform: translateY(0);
+}
+
+.challenge-card {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.5s ease-out-quad;
+}
+
+.challenges-section.visible .challenge-card {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Staggered entrance for cards */
+.challenges-section.visible .challenge-card:nth-child(1) { transition-delay: 0.1s; }
+.challenges-section.visible .challenge-card:nth-child(2) { transition-delay: 0.2s; }
+.challenges-section.visible .challenge-card:nth-child(3) { transition-delay: 0.3s; }
+.challenges-section.visible .challenge-card:nth-child(4) { transition-delay: 0.4s; }
+.challenges-section.visible .challenge-card:nth-child(5) { transition-delay: 0.5s; }
+.challenges-section.visible .challenge-card:nth-child(6) { transition-delay: 0.6s; }
+
+/* Icon pop animation */
+.challenge-icon {
+transform: scale(0.9);
+transition: transform 0.4s ease-out-quad 0.2s;
+}
+
+.challenges-section.visible .challenge-icon {
+transform: scale(1.05);
+transition-delay: 0.3s;
+}
+
+.challenges-section.visible .challenge-icon.icon-pop {
+transform: scale(1);
+}
+
+/* Interactive hover states */
+.challenge-card {
+position: relative;
+transition: all 0.4s ease-out-quad;
+cursor: pointer;
+}
+
+.challenge-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(10, 104, 255, 0.05) 0%, rgba(34, 160, 255, 0.05) 100%);
+border-radius: 1rem;
+opacity: 0;
+transition: opacity 0.4s ease-out-quad;
+z-index: 0;
+}
+
+.challenge-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 12px 30px rgba(10, 104, 255, 0.15);
+}
+
+.challenge-card:hover::before {
+opacity: 1;
+}
+
+.challenge-card:hover .challenge-icon {
+transform: scale(1.1) rotate(5deg);
+}
+
+.challenge-card:hover .challenge-emoji {
+transform: scale(1.2);
+}
+
+.challenge-content {
+position: relative;
+z-index: 1;
+}
+
+/* Exit animation on scroll past section */
+.challenges-section.exiting .challenge-card {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.5s ease-out-quad;
+}
+
+.challenges-section.exiting .challenge-card:nth-child(1) { transition-delay: 0.05s; }
+.challenges-section.exiting .challenge-card:nth-child(2) { transition-delay: 0.1s; }
+.challenges-section.exiting .challenge-card:nth-child(3) { transition-delay: 0.15s; }
+.challenges-section.exiting .challenge-card:nth-child(4) { transition-delay: 0.2s; }
+.challenges-section.exiting .challenge-card:nth-child(5) { transition-delay: 0.25s; }
+.challenges-section.exiting .challenge-card:nth-child(6) { transition-delay: 0.3s; }
+
+/* Custom easing function */
+@keyframes easeOutQuad {
+0% { opacity: 0; transform: translateY(30px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Our Solution Section Animations */
+.solution-section {
+opacity: 0;
+}
+
+.solution-section.visible {
+opacity: 1;
+}
+
+.solution-title {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s easeInOutCubic;
+position: relative;
+}
+
+.solution-title::after {
+content: '';
+position: absolute;
+bottom: -8px;
+left: 0;
+width: 0;
+height: 3px;
+background: linear-gradient(90deg, #0A68FF 0%, #22A0FF 100%);
+border-radius: 2px;
+transition: width 0.8s easeInOutCubic 0.3s;
+}
+
+.solution-section.visible .solution-title {
+opacity: 1;
+transform: translateY(0);
+}
+
+.solution-section.visible .solution-title::after {
+width: 80px;
+}
+
+/* Solution cards animation */
+.solution-card {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.6s easeInOutCubic;
+background-color: #F8FAFC;
+position: relative;
+overflow: hidden;
+}
+
+.solution-section.visible .solution-card {
+opacity: 1;
+transform: translateY(0);
+background-color: #F8FAFC;
+}
+
+/* Staggered entrance for cards (120ms delay) */
+.solution-section.visible .solution-card:nth-child(1) { transition-delay: 0.12s; }
+.solution-section.visible .solution-card:nth-child(2) { transition-delay: 0.24s; }
+.solution-section.visible .solution-card:nth-child(3) { transition-delay: 0.36s; }
+.solution-section.visible .solution-card:nth-child(4) { transition-delay: 0.48s; }
+.solution-section.visible .solution-card:nth-child(5) { transition-delay: 0.6s; }
+
+/* Icon rotation animation */
+.solution-icon {
+transform: rotate(-15deg) scale(0.9);
+opacity: 0;
+transition: all 0.5s easeInOutCubic;
+display: inline-block;
+}
+
+.solution-section.visible .solution-icon {
+transform: rotate(0deg) scale(1);
+opacity: 1;
+}
+
+/* Staggered icon rotation */
+.solution-section.visible .solution-card:nth-child(1) .solution-icon { transition-delay: 0.2s; }
+.solution-section.visible .solution-card:nth-child(2) .solution-icon { transition-delay: 0.32s; }
+.solution-section.visible .solution-card:nth-child(3) .solution-icon { transition-delay: 0.44s; }
+.solution-section.visible .solution-card:nth-child(4) .solution-icon { transition-delay: 0.56s; }
+.solution-section.visible .solution-card:nth-child(5) .solution-icon { transition-delay: 0.68s; }
+
+/* Interactive hover states */
+.solution-card {
+cursor: pointer;
+border: 1px solid transparent;
+transition: all 0.4s easeInOutCubic;
+}
+
+.solution-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, #E8F0FE 0%, #F0F7FF 100%);
+opacity: 0;
+transition: opacity 0.4s easeInOutCubic;
+z-index: 0;
+border-radius: inherit;
+}
+
+.solution-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 25px rgba(10, 104, 255, 0.12);
+border-color: rgba(10, 104, 255, 0.2);
+}
+
+.solution-card:hover::before {
+opacity: 1;
+}
+
+.solution-card:hover .solution-icon {
+transform: scale(1.1) rotate(5deg);
+animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+0%, 100% { transform: scale(1.1) rotate(5deg); }
+50% { transform: scale(1.15) rotate(8deg); }
+}
+
+.solution-content {
+position: relative;
+z-index: 1;
+}
+
+/* Exit animation on scroll past section */
+.solution-section.exiting .solution-card {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.5s easeInOutCubic;
+}
+
+.solution-section.exiting .solution-card:nth-child(1) { transition-delay: 0.05s; }
+.solution-section.exiting .solution-card:nth-child(2) { transition-delay: 0.1s; }
+.solution-section.exiting .solution-card:nth-child(3) { transition-delay: 0.15s; }
+.solution-section.exiting .solution-card:nth-child(4) { transition-delay: 0.2s; }
+.solution-section.exiting .solution-card:nth-child(5) { transition-delay: 0.25s; }
+
+/* Target Users Section Animations */
+.users-section {
+opacity: 0;
+}
+
+.users-section.visible {
+opacity: 1;
+}
+
+.users-title {
+opacity: 0;
+transform: translateX(-40px);
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+}
+
+.users-title::after {
+content: '';
+position: absolute;
+bottom: -8px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 3px;
+background: linear-gradient(90deg, #0A68FF 0%, #22A0FF 100%);
+border-radius: 2px;
+transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.users-section.visible .users-title {
+opacity: 1;
+transform: translateX(0);
+}
+
+.users-section.visible .users-title::after {
+width: 100px;
+}
+
+.users-subtitle {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.users-section.visible .users-subtitle {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Persona cards animation */
+.persona-card {
+opacity: 0;
+transform: translateY(40px) scale(0.95);
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+}
+
+.users-section.visible .persona-card {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+
+/* Staggered entrance for persona cards */
+.users-section.visible .persona-card:nth-child(1) { transition-delay: 0.1s; }
+.users-section.visible .persona-card:nth-child(2) { transition-delay: 0.2s; }
+.users-section.visible .persona-card:nth-child(3) { transition-delay: 0.3s; }
+.users-section.visible .persona-card:nth-child(4) { transition-delay: 0.4s; }
+.users-section.visible .persona-card:nth-child(5) { transition-delay: 0.5s; }
+
+/* Illustration animation */
+.persona-illustration {
+opacity: 0;
+transform: scale(0.9) translateY(20px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+overflow: visible;
+position: relative;
+min-height: 160px;
+display: flex;
+align-items: center;
+}
+
+.users-section.visible .persona-illustration {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
+
+.persona-illustration img {
+width: 100%;
+height: auto;
+min-height: 160px;
+max-height: 200px;
+object-fit: cover;
+object-position: top;
+border-radius: 0.5rem;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered illustration animation */
+.users-section.visible .persona-card:nth-child(1) .persona-illustration { transition-delay: 0.25s; }
+.users-section.visible .persona-card:nth-child(2) .persona-illustration { transition-delay: 0.35s; }
+.users-section.visible .persona-card:nth-child(3) .persona-illustration { transition-delay: 0.45s; }
+.users-section.visible .persona-card:nth-child(4) .persona-illustration { transition-delay: 0.55s; }
+.users-section.visible .persona-card:nth-child(5) .persona-illustration { transition-delay: 0.65s; }
+
+/* Spotlight view functionality */
+.persona-card.spotlight {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(1.5);
+z-index: 1000;
+max-width: 90vw;
+max-height: 90vh;
+cursor: pointer;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+border-radius: 1rem;
+background: white;
+}
+
+.persona-card.spotlight .persona-illustration {
+overflow: visible;
+transform: scale(1);
+cursor: zoom-out;
+}
+
+.persona-card.spotlight .persona-illustration img {
+transform: scale(1.2);
+transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+border-radius: 0.5rem;
+}
+
+.persona-card.spotlight .persona-content {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.persona-card.spotlight.show-content .persona-content {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Close button for spotlight */
+.spotlight-close {
+position: absolute;
+top: 1rem;
+right: 1rem;
+width: 3rem;
+height: 3rem;
+background: rgba(0, 0, 0, 0.8);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+cursor: pointer;
+z-index: 1001;
+opacity: 0;
+transform: scale(0.8);
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-close:hover {
+background: rgba(0, 0, 0, 0.9);
+transform: scale(1);
+}
+
+.persona-card.spotlight .spotlight-close {
+opacity: 1;
+transform: scale(1);
+}
+
+/* Overlay for spotlight mode */
+.spotlight-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 999;
+opacity: 0;
+transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+pointer-events: none;
+}
+
+.spotlight-overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+
+/* Interactive hover states */
+.persona-card {
+cursor: pointer;
+border: 2px solid transparent;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.persona-card::before {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+right: -2px;
+bottom: -2px;
+background: linear-gradient(45deg, #0A68FF, #22A0FF, #0A68FF);
+border-radius: inherit;
+opacity: 0;
+transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+z-index: 0;
+}
+
+.persona-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 30px rgba(10, 104, 255, 0.15);
+}
+
+.persona-card:hover::before {
+opacity: 1;
+}
+
+.persona-card:hover .persona-illustration {
+    transform: translateY(-5px);
+    animation: illustrationBounce 2s ease-in-out infinite;
+}
+
+.persona-card:hover .persona-illustration img {
+transform: scale(1.05);
+box-shadow: 0 8px 25px rgba(10, 104, 255, 0.15);
+border-radius: 0.75rem;
+}
+
+@keyframes illustrationBounce {
+0%, 100% {
+    transform: translateY(-5px) scale(1.02);
+}
+50% {
+    transform: translateY(-8px) scale(1.03);
+}
+}
+
+.persona-card:hover .persona-content {
+transform: translateY(-2px);
+}
+
+.persona-content {
+position: relative;
+z-index: 1;
+transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Parallax scroll effect for illustrations */
+.persona-illustration {
+transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+will-change: transform;
+}
+
+/* Exit animation on scroll past section */
+.users-section.exiting .persona-card {
+opacity: 0;
+transform: translateY(30px) scale(0.95);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.users-section.exiting .persona-card:nth-child(1) { transition-delay: 0.05s; }
+.users-section.exiting .persona-card:nth-child(2) { transition-delay: 0.1s; }
+.users-section.exiting .persona-card:nth-child(3) { transition-delay: 0.15s; }
+.users-section.exiting .persona-card:nth-child(4) { transition-delay: 0.2s; }
+.users-section.exiting .persona-card:nth-child(5) { transition-delay: 0.25s; }
+
+.users-section.exiting .users-title,
+.users-section.exiting .users-subtitle {
+opacity: 0;
+transform: translateY(-20px);
+}
+
+/* Implementation Section Animations */
+.implementation-section {
+opacity: 0;
+}
+
+.implementation-section.visible {
+opacity: 1;
+}
+
+.implementation-title {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.8s easeInOutSine;
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.implementation-title .gear-icon {
+transform: rotate(0deg) scale(0.8);
+opacity: 0;
+transition: all 0.8s easeInOutSine;
+}
+
+.implementation-section.visible .implementation-title {
+opacity: 1;
+transform: translateY(0);
+}
+
+.implementation-section.visible .implementation-title .gear-icon {
+transform: rotate(360deg) scale(1);
+opacity: 1;
+animation: gearRotate 4s linear infinite;
+}
+
+@keyframes gearRotate {
+from { transform: rotate(360deg) scale(1); }
+to { transform: rotate(720deg) scale(1); }
+}
+
+/* Left column (Technology list) animation */
+.tech-column {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.8s easeInOutSine 0.3s;
+}
+
+.implementation-section.visible .tech-column {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Tech items staggered animation */
+.tech-item {
+opacity: 0;
+transform: translateX(-30px);
+transition: all 0.6s easeInOutSine;
+}
+
+.implementation-section.visible .tech-item {
+opacity: 1;
+transform: translateX(0);
+}
+
+.implementation-section.visible .tech-item:nth-child(1) { transition-delay: 0.4s; }
+.implementation-section.visible .tech-item:nth-child(2) { transition-delay: 0.5s; }
+.implementation-section.visible .tech-item:nth-child(3) { transition-delay: 0.6s; }
+.implementation-section.visible .tech-item:nth-child(4) { transition-delay: 0.7s; }
+.implementation-section.visible .tech-item:nth-child(5) { transition-delay: 0.8s; }
+
+/* Right column (Workflow) animation */
+.workflow-column {
+opacity: 0;
+transform: translateX(40px);
+transition: all 0.8s easeInOutSine 0.5s;
+}
+
+.implementation-section.visible .workflow-column {
+opacity: 1;
+transform: translateX(0);
+}
+
+/* Workflow line and steps animation */
+.workflow-line {
+opacity: 0;
+transition: opacity 0.8s easeInOutSine 1.5s;
+}
+
+.workflow-step {
+opacity: 0;
+transform: scale(0.3);
+transition: all 0.5s easeInOutSine;
+}
+
+.implementation-section.visible .workflow-line {
+opacity: 1;
+}
+
+.implementation-section.visible .workflow-step {
+opacity: 1;
+transform: scale(1);
+}
+
+.implementation-section.visible .workflow-step:nth-child(1) { transition-delay: 0.8s; }
+.implementation-section.visible .workflow-step:nth-child(2) { transition-delay: 2.3s; }
+.implementation-section.visible .workflow-step:nth-child(3) { transition-delay: 3.3s; }
+
+/* Success criteria items */
+.success-item {
+opacity: 0;
+transform: translateX(-20px);
+transition: all 0.5s easeInOutSine;
+}
+
+.implementation-section.visible .success-item {
+opacity: 1;
+transform: translateX(0);
+}
+
+.implementation-section.visible .success-item:nth-child(1) { transition-delay: 1.1s; }
+.implementation-section.visible .success-item:nth-child(2) { transition-delay: 1.2s; }
+.implementation-section.visible .success-item:nth-child(3) { transition-delay: 1.3s; }
+.implementation-section.visible .success-item:nth-child(4) { transition-delay: 1.4s; }
+
+/* Interactive hover states */
+.workflow-step {
+cursor: pointer;
+transition: all 0.3s easeInOutSine;
+}
+
+.workflow-step:hover .step-circle {
+transform: scale(1.2);
+box-shadow: 0 0 20px rgba(10, 104, 255, 0.4);
+animation: stepPulse 1s ease-in-out infinite;
+}
+
+@keyframes stepPulse {
+0%, 100% {
+transform: scale(1.2);
+box-shadow: 0 0 20px rgba(10, 104, 255, 0.4);
+}
+50% {
+transform: scale(1.3);
+box-shadow: 0 0 30px rgba(10, 104, 255, 0.6);
+}
+}
+
+.workflow-step:hover .step-content {
+transform: translateY(-2px);
+}
+
+.step-content {
+transition: transform 0.3s easeInOutSine;
+}
+
+/* Scroll-linked line glow animation */
+.workflow-line-glow {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(180deg,
+transparent 0%,
+rgba(10, 104, 255, 0.3) 50%,
+transparent 100%
+);
+opacity: 0;
+transition: opacity 0.5s easeInOutSine;
+pointer-events: none;
+}
+
+.workflow-line.active .workflow-line-glow {
+opacity: 1;
+animation: lineGlowPulse 2s ease-in-out infinite;
+}
+
+@keyframes lineGlowPulse {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 0.8; }
+}
+
+/* Exit animation on scroll past section */
+.implementation-section.exiting .tech-column {
+opacity: 0;
+transform: translateY(-30px);
+transition: all 0.6s easeInOutSine;
+}
+
+.implementation-section.exiting .workflow-column {
+opacity: 0;
+transform: translateX(30px);
+transition: all 0.6s easeInOutSine;
+}
+
+.implementation-section.exiting .workflow-line {
+opacity: 0;
+transition: all 0.6s easeInOutSine;
+}
+
+.implementation-section.exiting .workflow-step:nth-child(1) {
+opacity: 0;
+transform: scale(0.3);
+transition: all 0.5s easeInOutSine 0.1s;
+}
+.implementation-section.exiting .workflow-step:nth-child(2) {
+opacity: 0;
+transform: scale(0.3);
+transition: all 0.5s easeInOutSine 0.05s;
+}
+.implementation-section.exiting .workflow-step:nth-child(3) {
+opacity: 0;
+transform: scale(0.3);
+transition: all 0.5s easeInOutSine;
+}
+
+/* Testimonials Section Animations */
+.testimonials-section {
+opacity: 0;
+background: linear-gradient(135deg, #f8fafc 0%, #e8f0fe 50%, #f0f7ff 100%);
+}
+
+.testimonials-section.visible {
+opacity: 1;
+}
+
+.testimonials-title {
+opacity: 0;
+transform: translateY(-30px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonials-section.visible .testimonials-title {
+opacity: 1;
+transform: translateY(0);
+}
+
+.testimonials-subtitle {
+opacity: 0;
+transform: translateY(-20px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.testimonials-section.visible .testimonials-subtitle {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Testimonial cards entrance animation */
+.testimonial-card {
+opacity: 0;
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+border-radius: 1rem;
+position: relative;
+overflow: hidden;
+}
+
+.testimonials-section.visible .testimonial-card {
+opacity: 1;
+}
+
+/* Left slide animation */
+.testimonial-left {
+transform: translateX(-60px);
+}
+
+.testimonials-section.visible .testimonial-left {
+transform: translateX(0);
+}
+
+/* Right slide animation */
+.testimonial-right {
+transform: translateX(60px);
+}
+
+.testimonials-section.visible .testimonial-right {
+transform: translateX(0);
+}
+
+/* Photo scale animation with soft shadow pop */
+.testimonial-photo {
+opacity: 0;
+transform: scale(0.8);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-section.visible .testimonial-photo {
+opacity: 1;
+transform: scale(1);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Staggered entrance for testimonials */
+.testimonials-section.visible .testimonial-slide:nth-child(1) .testimonial-card {
+transition-delay: 0.4s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(2) .testimonial-card {
+transition-delay: 0.6s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(3) .testimonial-card {
+transition-delay: 0.8s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(4) .testimonial-card {
+transition-delay: 1.0s;
+}
+
+/* Staggered photo animations */
+.testimonials-section.visible .testimonial-slide:nth-child(1) .testimonial-photo {
+transition-delay: 0.7s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(2) .testimonial-photo {
+transition-delay: 0.9s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(3) .testimonial-photo {
+transition-delay: 1.1s;
+}
+.testimonials-section.visible .testimonial-slide:nth-child(4) .testimonial-photo {
+transition-delay: 1.3s;
+}
+
+/* Interactive hover animations */
+.testimonial-card {
+cursor: pointer;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(10, 104, 255, 0.05) 0%, rgba(34, 160, 255, 0.05) 100%);
+border-radius: inherit;
+opacity: 0;
+transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+z-index: 0;
+}
+
+.testimonial-card:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 40px rgba(10, 104, 255, 0.15);
+}
+
+.testimonial-card:hover::before {
+opacity: 1;
+}
+
+/* Quote text brightens on hover */
+.testimonial-quote {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+z-index: 1;
+}
+
+.testimonial-card:hover .testimonial-quote {
+color: #1e40af;
+font-weight: 500;
+}
+
+/* User photo scales slightly on hover */
+.testimonial-card:hover .testimonial-photo {
+transform: scale(1.1);
+box-shadow: 0 12px 30px rgba(10, 104, 255, 0.2);
+}
+
+.testimonial-photo {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover .testimonial-content {
+transform: translateY(-2px);
+}
+
+.testimonial-content {
+transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+z-index: 1;
+}
+
+/* Testimonial slider functionality */
+.testimonials-slider-container {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+}
+
+.testimonials-section.visible .testimonials-slider-container {
+opacity: 1;
+transform: translateY(0);
+}
+
+.testimonials-track {
+transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-slide {
+opacity: 0;
+transform: scale(0.95);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-slide.active {
+opacity: 1;
+transform: scale(1);
+}
+
+/* Slider controls */
+.testimonial-nav {
+opacity: 0;
+transform: scale(0.8);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 1.5s;
+}
+
+.testimonials-section.visible .testimonial-nav {
+opacity: 1;
+transform: scale(1);
+}
+
+.testimonial-nav:hover {
+transform: scale(1.1);
+box-shadow: 0 8px 20px rgba(10, 104, 255, 0.2);
+}
+
+.testimonial-dot {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-dot.active {
+background: #0A68FF;
+width: 24px;
+border-radius: 2px;
+}
+
+.testimonial-dot:hover {
+background: #0A68FF;
+opacity: 0.7;
+}
+
+/* Exit animation on scroll past section */
+.testimonials-section.exiting .testimonials-title {
+opacity: 0;
+transform: translateY(-30px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonials-section.exiting .testimonials-subtitle {
+opacity: 0;
+transform: translateY(-20px);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.testimonials-section.exiting .testimonial-card {
+opacity: 0;
+transform: translateY(-40px) scale(0.95);
+transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonials-section.exiting .testimonial-slide:nth-child(1) .testimonial-card { transition-delay: 0.05s; }
+.testimonials-section.exiting .testimonial-slide:nth-child(2) .testimonial-card { transition-delay: 0.1s; }
+.testimonials-section.exiting .testimonial-slide:nth-child(3) .testimonial-card { transition-delay: 0.15s; }
+.testimonials-section.exiting .testimonial-slide:nth-child(4) .testimonial-card { transition-delay: 0.2s; }
+
+/* Auto-slider progress indicator */
+.testimonial-progress {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 3px;
+background: linear-gradient(90deg, #0A68FF 0%, #22A0FF 100%);
+border-radius: 0 2px 2px 0;
+transition: width 6s linear;
+width: 0;
+}
+
+.testimonial-slide.active .testimonial-progress {
+width: 100%;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+.hero-bg,
+.hero-headline,
+.hero-subtext,
+.hero-description,
+.hero-cta-container,
+.challenges-section,
+.challenge-card,
+.challenge-icon,
+.solution-section,
+.solution-card,
+.solution-icon,
+.solution-title::after,
+.users-section,
+.persona-card,
+.persona-illustration,
+.users-title::after,
+.implementation-section,
+.implementation-title,
+.tech-column,
+.workflow-column,
+.workflow-line,
+.workflow-step,
+.testimonials-section,
+.testimonials-title,
+.testimonials-subtitle,
+.testimonial-card,
+.testimonial-photo,
+.testimonial-quote,
+.testimonial-content,
+.testimonials-slider-container,
+.testimonial-nav,
+.testimonial-dot {
+animation: none;
+transition: none;
+opacity: 1;
+transform: none;
+width: auto;
+}
+}
+
+/* Table styling */
+/* Table styling */
+table {
+border-spacing: 0;
+width: 100%;
+}
+th {
+background-color: #f8fafc;
+}
+td, th {
+padding: 1.5rem;
+}
+tr:nth-child(even) {
+background-color: #f8fafc;
+}
+tr:last-child td {
+border-bottom: none;
+}
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-12{bottom:3rem}.left-6{left:1.5rem}.top-12{top:3rem}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mr-6{margin-right:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.h-10{height:2.5rem}.h-12{height:3rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-full{height:100%}.max-h-\[200px\]{max-height:200px}.min-h-\[160px\]{min-height:160px}.w-0\.5{width:0.125rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-2{width:0.5rem}.w-2\/5{width:40%}.w-20{width:5rem}.w-3\/5{width:60%}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.min-w-full{min-width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.border-collapse{border-collapse:collapse}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.\!rounded-button{border-radius:4px !important}.rounded-2xl{border-radius:20px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:12px}.rounded-xl{border-radius:16px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-light{--tw-bg-opacity:1;background-color:rgb(232 241 255 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(10 104 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-primary{--tw-gradient-from:#0A68FF var(--tw-gradient-from-position);--tw-gradient-to:rgb(10 104 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-indigo-50{--tw-gradient-to:#eef2ff var(--tw-gradient-to-position)}.to-secondary{--tw-gradient-to:#22A0FF var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-10{padding-bottom:2.5rem}.pb-24{padding-bottom:6rem}.pt-16{padding-top:4rem}.pt-32{padding-top:8rem}.pt-8{padding-top:2rem}.text-left{text-align:left}.text-center{text-align:center}.align-top{vertical-align:top}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-tight{line-height:1.25}.text-dark{--tw-text-opacity:1;color:rgb(10 42 107 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(10 104 255 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(34 160 255 / var(--tw-text-opacity, 1))}.text-success{--tw-text-opacity:1;color:rgb(40 199 111 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(10 104 255 / var(--tw-bg-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(10 104 255 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:opacity-90:hover{opacity:0.9}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:mb-0{margin-bottom:0px}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:flex-row-reverse{flex-direction:row-reverse}.md\:items-start{align-items:flex-start}.md\:justify-start{justify-content:flex-start}.md\:text-left{text-align:left}}@media (min-width: 1024px){.lg\:w-1\/2{width:50%}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}}</style></head>
+<body class="bg-white text-dark">
+<!-- Navigation -->
+<nav class="fixed w-full bg-white py-4 px-8 flex justify-between items-center z-50 shadow-sm">
+<div class="flex items-center">
+<img src="BUTDA_logo.png" alt="BUTDA Logo" class="h-8 w-8 mr-3 rounded-lg">
+<div class="font-logo text-2xl text-primary">BUTDA</div>
+</div>
+<div class="flex space-x-8">
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link font-medium">Product</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link font-medium">Features</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link font-medium">Pricing</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link font-medium">Blog</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link font-medium">Sign In</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-bg pt-32 pb-24 px-8 hero-exit" id="hero">
+<!-- Parallax Background Elements -->
+<div class="parallax-card parallax-card-1" style="transform: translate(-0.322865px, 7.47565px);"></div>
+<div class="parallax-card parallax-card-2" style="transform: translate(-0.64573px, 14.9513px);"></div>
+<div class="parallax-card parallax-card-3" style="transform: translate(-0.968596px, 22.4269px);"></div>
+<div class="parallax-card parallax-card-4" style="transform: translate(-1.29146px, 29.9026px);"></div>
+
+<div class="max-w-6xl mx-auto text-center relative z-10">
+<h1 class="text-5xl font-bold mb-6 leading-tight hero-headline">
+Being Up To Date Assistant
+</h1>
+<p class="text-2xl font-semibold mt-16 mb-6 max-w-3xl mx-auto hero-subtext">
+3 minutes. One feed. All the news you need — with BUTDA.
+</p>
+<p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto hero-description">
+Your AI assistant curates updates from trusted sources, filters the noise, and delivers clear, personalized summaries in minutes. Stay informed, effortlessly.
+</p>
+<div class="hero-cta-container">
+<button class="hero-cta !rounded-button whitespace-nowrap text-white font-bold py-4 px-8 text-lg">
+<span>Get Started Free</span>
+</button>
+</div>
+<a href="https://drive.google.com/drive/folders/1tD8Swqy5jdOSi3-92L0KoKJd15VVAO2v" class="block mt-6 text-primary font-medium hover:underline">Demo Video</a>
+</div>
+</section>
+<!-- Problems Section -->
+<section class="py-20 px-8 challenges-section visible" id="challenges">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-16 challenges-title">The Challenges of Staying Informed Today</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Problem 1 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">😵</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">Feeling Lost in the Noise? We Bring the Clarity.</h3>
+<p class="text-gray-600">
+Filter through countless sources to find what actually matters to you.
+</p>
+</div>
+</div>
+<!-- Problem 2 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">📚</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">Too Much to Read, Too Little That Matters.</h3>
+<p class="text-gray-600">
+Spend less time sifting and more time staying truly informed.
+</p>
+</div>
+</div>
+<!-- Problem 3 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">⏰</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">Your Time Deserves Better Than Endless Scrolling.</h3>
+<p class="text-gray-600">
+Transform hours of searching into minutes of meaningful updates.
+</p>
+</div>
+</div>
+<!-- Problem 4 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">🏃</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">Stop Chasing the News — Let It Find You.</h3>
+<p class="text-gray-600">
+Receive only the most relevant updates delivered directly to you.
+</p>
+</div>
+</div>
+<!-- Problem 5 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">🌪️</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">From Information Chaos to Instant Clarity.</h3>
+<p class="text-gray-600">
+Turn overwhelming data streams into clear, actionable insights.
+</p>
+</div>
+</div>
+<!-- Problem 6 -->
+<div class="bg-light rounded-2xl p-6 flex items-start challenge-card">
+<div class="text-2xl mr-4 challenge-emoji icon-pop">🧠</div>
+<div class="challenge-content">
+<h3 class="text-xl font-bold mb-2">Make Smarter Decisions Without the Information Overload.</h3>
+<p class="text-gray-600">
+Focus on what's important with our precision-crafted news experience.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-20 px-8 bg-blue-50 solution-section visible" id="solution">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-16 text-primary solution-title">Our Solution</h2>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Feature 1 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 solution-card">
+<div class="text-3xl mb-4 solution-icon">🌐</div>
+<div class="solution-content">
+<h3 class="font-bold text-lg mb-2">Unified Intelligence</h3>
+<p class="text-gray-600 text-sm">Collects information from multiple reliable sources</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 solution-card">
+<div class="text-3xl mb-4 solution-icon">✂️</div>
+<div class="solution-content">
+<h3 class="font-bold text-lg mb-2">Smarter Filtering</h3>
+<p class="text-gray-600 text-sm">Removes duplicates and repetitive content effortlessly</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 solution-card">
+<div class="text-3xl mb-4 solution-icon">🎯</div>
+<div class="solution-content">
+<h3 class="font-bold text-lg mb-2">Tailored to You</h3>
+<p class="text-gray-600 text-sm">Focuses on your chosen topics and interests</p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 solution-card">
+<div class="text-3xl mb-4 solution-icon">🤖</div>
+<div class="solution-content">
+<h3 class="font-bold text-lg mb-2">AI Precision</h3>
+<p class="text-gray-600 text-sm">Generates clear, human-readable summaries</p>
+</div>
+</div>
+<!-- Feature 5 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 solution-card">
+<div class="text-3xl mb-4 solution-icon">⚡</div>
+<div class="solution-content">
+<h3 class="font-bold text-lg mb-2">Time Well Spent</h3>
+<p class="text-gray-600 text-sm">Delivers personalized, quick-to-read updates daily</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Help Section -->
+<section class="py-20 px-8 bg-blue-50 users-section visible" id="users">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-4 users-title">Built for Students, Researchers &amp; Professionals</h2>
+<p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto users-subtitle">Stay informed and make smarter decisions — effortlessly.</p>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 persona-card" data-title="Information Overload" data-description="Cut through the noise with concise daily summaries.">
+<div class="mb-4 overflow-visible rounded-lg persona-illustration">
+<img src="./BUTDA_files/31b48fc36f0b966bd4645fefdb64e5d6.jpg" alt="Information Overload" class="w-full object-cover object-top min-h-[160px] max-h-[200px]">
+</div>
+<div class="persona-content">
+<h3 class="font-bold text-lg mb-2">Information Overload</h3>
+<p class="text-gray-600 text-sm">Cut through the noise with concise daily summaries.</p>
+</div>
+<div class="spotlight-close">×</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 persona-card" data-title="Scattered Sources, Scattered Focus" data-description="Collect insights from reliable sources in one place.">
+<div class="mb-4 overflow-visible rounded-lg persona-illustration">
+<img src="./BUTDA_files/227c7c18584763a6d78666afe6d70bef.jpg" alt="Too Many Sources" class="w-full object-cover object-top min-h-[160px] max-h-[200px]">
+</div>
+<div class="persona-content">
+<h3 class="font-bold text-lg mb-2">Scattered Sources, Scattered Focus</h3>
+<p class="text-gray-600 text-sm">Collect insights from reliable sources in one place.</p>
+</div>
+<div class="spotlight-close">×</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 persona-card" data-title="Falling Behind Fast Changes" data-description="Stay updated on AI, business, and finance trends daily.">
+<div class="mb-4 overflow-visible rounded-lg persona-illustration">
+<img src="./BUTDA_files/f15878305b4186fa1601899a164815ac.jpg" alt="AI &amp; Market Changes" class="w-full object-cover object-top min-h-[160px] max-h-[200px]">
+</div>
+<div class="persona-content">
+<h3 class="font-bold text-lg mb-2">Falling Behind Fast Changes</h3>
+<p class="text-gray-600 text-sm">Stay updated on AI, business, and finance trends daily.</p>
+</div>
+<div class="spotlight-close">×</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 persona-card" data-title="Need Actionable Insights" data-description="Transform headlines into clear, strategic takeaways.">
+<div class="mb-4 overflow-visible rounded-lg persona-illustration">
+<img src="./BUTDA_files/c258cf9348c653b9b42a84064e65d617.jpg" alt="Actionable Insights" class="w-full object-cover object-top min-h-[160px] max-h-[200px]">
+</div>
+<div class="persona-content">
+<h3 class="font-bold text-lg mb-2">Need Actionable Insights</h3>
+<p class="text-gray-600 text-sm">Transform headlines into clear, strategic takeaways.</p>
+</div>
+<div class="spotlight-close">×</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-blue-100 persona-card" data-title="Seeking Reliable, Verified Sources" data-description="Rely on curated, transparent, and factual updates.">
+<div class="mb-4 overflow-visible rounded-lg persona-illustration">
+<img src="./BUTDA_files/676ffa3ab702a805d482f0e9544df6b9.jpg" alt="Trusted Content" class="w-full object-cover object-top min-h-[160px] max-h-[200px]">
+</div>
+<div class="persona-content">
+<h3 class="font-bold text-lg mb-2">Seeking Reliable, Verified Sources</h3>
+<p class="text-gray-600 text-sm">Rely on curated, transparent, and factual updates.</p>
+</div>
+<div class="spotlight-close">×</div>
+</div>
+</div>
+</div>
+
+</section>
+<!-- Spotlight Overlay -->
+<div class="spotlight-overlay"></div>
+<!-- Implementation Section -->
+<section class="py-20 px-8 bg-blue-50 implementation-section visible" id="implementation">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-16 text-primary implementation-title">
+<span class="gear-icon">⚙️</span>
+<span>IMPLEMENTATION</span>
+</h2>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2 tech-column">
+<h3 class="text-2xl font-bold mb-6">Our Technology</h3>
+<p class="text-gray-600 mb-6">
+The project uses the <strong>vibe coding</strong> methodology — assigning each AI agent a unique role and "vibe" for efficiency and clarity:
+</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start tech-item">
+<div class="feature-icon bg-white rounded-lg mr-4 flex-shrink-0">
+<i class="fas fa-tasks text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">DeepSeek Planner</h4>
+<p class="text-gray-600">Defines user intent and task sequences</p>
+</div>
+</li>
+<li class="flex items-start tech-item">
+<div class="feature-icon bg-white rounded-lg mr-4 flex-shrink-0">
+<i class="fas fa-search text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">WebSearch Agent</h4>
+<p class="text-gray-600">Collects information from trusted sources</p>
+</div>
+</li>
+<li class="flex items-start tech-item">
+<div class="feature-icon bg-white rounded-lg mr-4 flex-shrink-0">
+<i class="fas fa-file-alt text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Summarizer</h4>
+<p class="text-gray-600">Condenses findings into readable digests</p>
+</div>
+</li>
+<li class="flex items-start tech-item">
+<div class="feature-icon bg-white rounded-lg mr-4 flex-shrink-0">
+<i class="fas fa-star text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Personalized</h4>
+<p class="text-gray-600">Ranks relevance and adjusts tone to your preferences</p>
+</div>
+</li>
+<li class="flex items-start tech-item">
+<div class="feature-icon bg-white rounded-lg mr-4 flex-shrink-0">
+<i class="fas fa-clock text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Scheduler</h4>
+<p class="text-gray-600">Delivers digest at your optimized time</p>
+</div>
+</li>
+</ul>
+<h3 class="text-xl font-bold mb-4">Success Criteria:</h3>
+<ul class="space-y-2">
+<li class="flex items-start success-item">
+<div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+<i class="fas fa-check text-success text-xs"></i>
+</div>
+<span class="text-gray-600">&lt;1s response for cached queries</span>
+</li>
+<li class="flex items-start success-item">
+<div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+<i class="fas fa-check text-success text-xs"></i>
+</div>
+<span class="text-gray-600">95% uptime and error resilience</span>
+</li>
+<li class="flex items-start success-item">
+<div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+<i class="fas fa-check text-success text-xs"></i>
+</div>
+<span class="text-gray-600">30–60 min news browsing reduced to 3–5 min/day</span>
+</li>
+<li class="flex items-start success-item">
+<div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+<i class="fas fa-check text-success text-xs"></i>
+</div>
+<span class="text-gray-600">Seamless user experience with transparent sourcing</span>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 workflow-column">
+<div class="bg-white rounded-2xl p-8 shadow-sm h-full">
+<div class="mb-6">
+<h3 class="text-xl font-bold mt-8 mb-4">Workflow Overview:</h3>
+<!-- Workflow Diagram -->
+<div class="relative">
+<!-- Connecting lines -->
+<div class="absolute left-6 top-12 bottom-12 w-0.5 bg-primary transform -translate-x-1/2 workflow-line">
+<div class="workflow-line-glow"></div>
+</div>
+<!-- Step 1 -->
+<div class="flex items-start mb-10 workflow-step">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-6 step-circle">1</div>
+<div class="step-content">
+<h4 class="font-bold mb-1">Input</h4>
+<p class="text-gray-600">User query (e.g., "AI startups in 2025", "Vietnam–China trade", "market volatility")</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start mb-10 workflow-step">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-6 step-circle">2</div>
+<div class="step-content">
+<h4 class="font-bold mb-1">Process</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+<i class="fas fa-check text-primary text-xs"></i>
+</div>
+<span class="text-gray-600">Planner defines task sequence</span>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+<i class="fas fa-check text-primary text-xs"></i>
+</div>
+<span class="text-gray-600">WebSearch Agent collects information</span>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+<i class="fas fa-check text-primary text-xs"></i>
+</div>
+<span class="text-gray-600">Summarizer condenses findings</span>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+<i class="fas fa-check text-primary text-xs"></i>
+</div>
+<span class="text-gray-600">Personalized ranks relevance &amp; adjusts tone</span>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+<i class="fas fa-check text-primary text-xs"></i>
+</div>
+<span class="text-gray-600">Scheduler delivers digest at optimized time</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start workflow-step">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-6 step-circle">3</div>
+<div class="step-content">
+<h4 class="font-bold mb-1">Output</h4>
+<p class="text-gray-600">Clear, verified, and structured 3–5 bullet summaries — concise enough for lock-screen reading, detailed enough for business insight.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section>
+<!-- Challenges Section -->
+<section class="py-20 px-8 bg-light">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-16 text-primary">When AI Moves Fast — and Breaks Your Workflow</h2>
+<div class="bg-white rounded-2xl p-8 shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-200">
+<th class="text-left py-4 px-6 font-bold text-lg text-primary w-2/5">Challenges Encountered</th>
+<th class="text-left py-4 px-6 font-bold text-lg text-secondary w-3/5">Solutions / Improvements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-100">
+<td class="py-6 px-6 align-top">
+<div class="flex">
+<div class="font-bold mr-3">1.</div>
+<div><strong>When Speed Becomes Technical Debt</strong><br>AI generates code too fast and too much, leading to accumulated technical debt.</div>
+</div>
+</td>
+<td class="py-6 px-6 align-top">
+<div class="flex mt-1">
+<div class="mr-3">•</div>
+<div>Write an implementation plan before coding</div>
+</div>
+<div class="flex mt-2">
+<div class="mr-3">•</div>
+<div>Break tasks into smaller modules for clarity</div>
+</div>
+<div class="flex mt-2">
+<div class="mr-3">•</div>
+<div>Strengthen code review and unit testing</div>
+</div>
+<div class="flex mt-2">
+<div class="mr-3">•</div>
+<div>Improve prompts with clearer technical requirements — e.g., "Write this function in Python using type hints and ensure O(n) performance."</div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-gray-100">
+<td class="py-6 px-6 align-top">
+<div class="flex">
+<div class="font-bold mr-3">2.</div>
+<div><strong>Designing with Intelligence, Not Dependence</strong><br>Debugging AI-generated code is time-consuming and complex due to incomplete understanding of underlying logic.</div>
+</div>
+</td>
+<td class="py-6 px-6 align-top">
+<div class="flex mt-1">
+<div class="mr-3">•</div>
+<div>Build strong foundational coding knowledge instead of relying entirely on LLMs</div>
+</div>
+<div class="flex mt-2">
+<div class="mr-3">•</div>
+<div>Understanding core programming logic is essential for efficient debugging and system reliability</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="py-6 px-6 align-top">
+<div class="flex">
+<div class="font-bold mr-3">3.</div>
+<div><strong>Matching Minds — Choosing the Right Model for the Right Task</strong><br>Choosing the right model for each task (e.g., summarization, planning, web search) in the workflow is complex and affects speed.</div>
+</div>
+</td>
+<td class="py-6 px-6 align-top">
+<div class="flex mt-1">
+<div class="mr-3">•</div>
+<div>Establish model-task mapping based on performance benchmarks (e.g., DeepSeek for planning, GPT for summarization)</div>
+</div>
+<div class="flex mt-2">
+<div class="mr-3">•</div>
+<div>Evaluate and fine-tune model selection to balance cost, latency, and reliability</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 px-8 testimonials-section visible" id="testimonials">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-4 testimonials-title">What Our Users Say</h2>
+<p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto testimonials-subtitle">
+Real stories from professionals who transformed their daily news routine with BUTDA
+</p>
+
+<!-- Testimonials Slider Container -->
+<div class="testimonials-slider-container relative">
+<div class="testimonials-slider overflow-hidden">
+<div class="testimonials-track flex transition-transform duration-800 ease-in-out" style="transform: translateX(0%);">
+<!-- Testimonial 1 - Left slide -->
+<div class="testimonial-slide min-w-full px-4 active">
+<div class="max-w-4xl mx-auto">
+<div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 testimonial-card testimonial-left">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<div class="flex-shrink-0">
+<div class="w-20 h-20 rounded-full overflow-hidden testimonial-photo">
+<img src="./BUTDA_files/a1b2c3d4e5f67890.jpg" alt="Sarah Chen" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start mb-3">
+<div class="text-yellow-400 mr-2">★★★★★</div>
+</div>
+<blockquote class="text-lg text-gray-700 italic mb-4 testimonial-quote">
+"BUTDA transformed how I start my day. Instead of 45 minutes scrolling through dozens of sources, I get exactly what I need in 3 minutes. The AI summaries are remarkably accurate and save me hours every week."
+</blockquote>
+<div class="testimonial-content">
+<h4 class="font-bold text-lg text-gray-900">Sarah Chen</h4>
+<p class="text-gray-600">Senior Product Manager at Tech Innovations</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Testimonial 2 - Right slide -->
+<div class="testimonial-slide min-w-full px-4">
+<div class="max-w-4xl mx-auto">
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 testimonial-card testimonial-right">
+<div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
+<div class="flex-shrink-0">
+<div class="w-20 h-20 rounded-full overflow-hidden testimonial-photo">
+<img src="./BUTDA_files/b2c3d4e5f6789012.jpg" alt="Dr. Michael Roberts" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start mb-3">
+<div class="text-yellow-400 mr-2">★★★★★</div>
+</div>
+<blockquote class="text-lg text-gray-700 italic mb-4 testimonial-quote">
+"As a researcher, staying current is critical. BUTDA's ability to synthesize information from academic journals, industry reports, and news sources has been invaluable. It's like having a research assistant available 24/7."
+</blockquote>
+<div class="testimonial-content">
+<h4 class="font-bold text-lg text-gray-900">Dr. Michael Roberts</h4>
+<p class="text-gray-600">AI Research Director, Stanford University</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Testimonial 3 - Left slide -->
+<div class="testimonial-slide min-w-full px-4">
+<div class="max-w-4xl mx-auto">
+<div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 testimonial-card testimonial-left">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<div class="flex-shrink-0">
+<div class="w-20 h-20 rounded-full overflow-hidden testimonial-photo">
+<img src="./BUTDA_files/c3d4e5f678901234.jpg" alt="Emily Johnson" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start mb-3">
+<div class="text-yellow-400 mr-2">★★★★★</div>
+</div>
+<blockquote class="text-lg text-gray-700 italic mb-4 testimonial-quote">
+"The personalization is incredible. BUTDA learned my preferences so quickly that now every digest feels handpicked. It's the only tool that's actually reduced my information overload instead of adding to it."
+</blockquote>
+<div class="testimonial-content">
+<h4 class="font-bold text-lg text-gray-900">Emily Johnson</h4>
+<p class="text-gray-600">Investment Analyst, Global Asset Management</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Testimonial 4 - Right slide -->
+<div class="testimonial-slide min-w-full px-4">
+<div class="max-w-4xl mx-auto">
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 testimonial-card testimonial-right">
+<div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
+<div class="flex-shrink-0">
+<div class="w-20 h-20 rounded-full overflow-hidden testimonial-photo">
+<img src="./BUTDA_files/d4e5f67890123456.jpg" alt="Alex Kumar" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start mb-3">
+<div class="text-yellow-400 mr-2">★★★★★</div>
+</div>
+<blockquote class="text-lg text-gray-700 italic mb-4 testimonial-quote">
+"I was skeptical about AI news curation, but BUTDA's accuracy and relevance won me over. It helps me focus on strategic thinking instead of information gathering. My decision-making quality has improved significantly."
+</blockquote>
+<div class="testimonial-content">
+<h4 class="font-bold text-lg text-gray-900">Alex Kumar</h4>
+<p class="text-gray-600">CEO, FinTech Startup</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slider Controls -->
+<div class="flex justify-center items-center mt-8 gap-4">
+<button class="testimonial-prev w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300 testimonial-nav">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+</svg>
+</button>
+<div class="flex gap-2 testimonial-dots">
+<button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot active"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 testimonial-dot"></button>
+</div>
+<button class="testimonial-next w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300 testimonial-nav">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-20 px-8 bg-light">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6">Ready to Stay Informed Effortlessly?</h2>
+<p class="text-xl mb-10 max-w-2xl mx-auto">
+Join thousands of professionals who start their day with a personalized news digest from BUTDA.
+</p>
+<button class="!rounded-button whitespace-nowrap bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-8 text-lg shadow-lg hover:opacity-90 transition-opacity">
+Get Started Free
+</button>
+<a href="https://drive.google.com/drive/folders/1tD8Swqy5jdOSi3-92L0KoKJd15VVAO2v" class="block mt-6 text-primary font-medium hover:underline">Demo Video</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-10 px-8">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+<div class="md:col-span-2">
+<div class="flex items-center mb-4">
+<img src="BUTDA_logo.png" alt="BUTDA Logo" class="h-10 w-10 mr-3 rounded-lg">
+<div class="font-logo text-3xl text-primary">BUTDA</div>
+</div>
+<p class="text-gray-600 mb-6 max-w-md">
+Your AI-powered personal news assistant delivering the most relevant stories in just 3 minutes every day.
+</p>
+<div class="flex space-x-4">
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="text-gray-500 hover:text-primary">
+<i class="fab fa-twitter w-8 h-8 flex items-center justify-center"></i>
+</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="text-gray-500 hover:text-primary">
+<i class="fab fa-linkedin-in w-8 h-8 flex items-center justify-center"></i>
+</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="text-gray-500 hover:text-primary">
+<i class="fab fa-facebook-f w-8 h-8 flex items-center justify-center"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Product</h4>
+<ul class="space-y-3">
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Features</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Pricing</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Integrations</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Updates</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Resources</h4>
+<ul class="space-y-3">
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Blog</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Help Center</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Community</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Events</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Company</h4>
+<ul class="space-y-3">
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">About Us</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Careers</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Contact</a></li>
+<li><a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link">Partners</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 mb-4 md:mb-0">© 2023 Being Up To Date Assistant. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link text-sm">Privacy Policy</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link text-sm">Terms of Service</a>
+<a href="file:///C:/Users/zixua/Documents/WeChat%20Files/wxid_5fjocrrvob4b22/FileStorage/File/2025-11/DPT_Project.html#" class="footer-link text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// Parallax mouse movement effect
+document.addEventListener('DOMContentLoaded', function() {
+const heroSection = document.getElementById('hero');
+const parallaxCards = heroSection.querySelectorAll('.parallax-card');
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+
+// Smooth mouse tracking
+function updateMousePosition(e) {
+const rect = heroSection.getBoundingClientRect();
+mouseX = (e.clientX - rect.left - rect.width / 2) / rect.width;
+mouseY = (e.clientY - rect.top - rect.height / 2) / rect.height;
+}
+
+// Smooth animation loop
+function animateParallax() {
+currentX += (mouseX - currentX) * 0.1;
+currentY += (mouseY - currentY) * 0.1;
+
+parallaxCards.forEach((card, index) => {
+const speed = (index + 1) * 15; // Different speeds for each card
+const x = currentX * speed;
+const y = currentY * speed;
+card.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+requestAnimationFrame(animateParallax);
+}
+
+heroSection.addEventListener('mousemove', updateMousePosition);
+animateParallax();
+
+// Scroll exit effect
+let hasScrolled = false;
+function handleScrollExit() {
+const scrollY = window.scrollY;
+const heroHeight = heroSection.offsetHeight;
+const scrollThreshold = heroHeight * 0.3; // Start fading after 30% of hero height
+
+if (scrollY > scrollThreshold && !hasScrolled) {
+heroSection.classList.add('scrolled');
+hasScrolled = true;
+} else if (scrollY <= scrollThreshold && hasScrolled) {
+heroSection.classList.remove('scrolled');
+hasScrolled = false;
+}
+}
+
+window.addEventListener('scroll', handleScrollExit);
+
+// Challenges Section Animations
+const challengesSection = document.getElementById('challenges');
+let challengesAnimated = false;
+let challengesExiting = false;
+
+function handleChallengesAnimation() {
+const rect = challengesSection.getBoundingClientRect();
+const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+const isPastSection = rect.top < -rect.height * 0.5;
+
+if (isVisible && !challengesAnimated) {
+challengesSection.classList.add('visible');
+challengesAnimated = true;
+challengesExiting = false;
+
+// Trigger icon pop animation after cards appear
+setTimeout(() => {
+const icons = challengesSection.querySelectorAll('.challenge-icon, .challenge-emoji');
+icons.forEach(icon => {
+icon.classList.add('icon-pop');
+});
+}, 800);
+
+} else if (isPastSection && challengesAnimated && !challengesExiting) {
+challengesSection.classList.add('exiting');
+challengesExiting = true;
+
+} else if (!isPastSection && challengesExiting) {
+challengesSection.classList.remove('exiting');
+challengesExiting = false;
+}
+}
+
+// Solution Section Animations
+const solutionSection = document.getElementById('solution');
+let solutionAnimated = false;
+let solutionExiting = false;
+
+function handleSolutionAnimation() {
+const rect = solutionSection.getBoundingClientRect();
+const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+const isPastSection = rect.top < -rect.height * 0.5;
+
+if (isVisible && !solutionAnimated) {
+solutionSection.classList.add('visible');
+solutionAnimated = true;
+solutionExiting = false;
+
+} else if (isPastSection && solutionAnimated && !solutionExiting) {
+solutionSection.classList.add('exiting');
+solutionExiting = true;
+
+} else if (!isPastSection && solutionExiting) {
+solutionSection.classList.remove('exiting');
+solutionExiting = false;
+}
+}
+
+// Target Users Section Animations
+const usersSection = document.getElementById('users');
+let usersAnimated = false;
+let usersExiting = false;
+
+function handleUsersAnimation() {
+const rect = usersSection.getBoundingClientRect();
+const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+const isPastSection = rect.top < -rect.height * 0.5;
+
+if (isVisible && !usersAnimated) {
+usersSection.classList.add('visible');
+usersAnimated = true;
+usersExiting = false;
+
+} else if (isPastSection && usersAnimated && !usersExiting) {
+usersSection.classList.add('exiting');
+usersExiting = true;
+
+} else if (!isPastSection && usersExiting) {
+usersSection.classList.remove('exiting');
+usersExiting = false;
+}
+}
+
+// Light parallax scroll effect for illustrations
+function handleParallaxScroll() {
+    // Parallax effect disabled to prevent image positioning issues
+    // Images stay in their original positions
+    return;
+}
+
+// Implementation Section Animations
+const implementationSection = document.getElementById('implementation');
+let implementationAnimated = false;
+let implementationExiting = false;
+
+function handleImplementationAnimation() {
+const rect = implementationSection.getBoundingClientRect();
+const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+const isPastSection = rect.top < -rect.height * 0.5;
+
+if (isVisible && !implementationAnimated) {
+implementationSection.classList.add('visible');
+implementationAnimated = true;
+implementationExiting = false;
+
+} else if (isPastSection && implementationAnimated && !implementationExiting) {
+implementationSection.classList.add('exiting');
+implementationExiting = true;
+
+} else if (!isPastSection && implementationExiting) {
+implementationSection.classList.remove('exiting');
+implementationExiting = false;
+}
+}
+
+// Scroll-linked line glow animation
+function handleWorkflowLineGlow() {
+const scrollY = window.scrollY;
+const workflowLine = implementationSection.querySelector('.workflow-line');
+const workflowSteps = implementationSection.querySelectorAll('.workflow-step');
+const implementRect = implementationSection.getBoundingClientRect();
+
+if (implementRect.top < window.innerHeight && implementRect.bottom > 0) {
+const scrollProgress = Math.max(0, Math.min(1,
+(window.scrollY - (implementRect.top + window.scrollY)) / implementRect.height
+));
+
+workflowSteps.forEach((step, index) => {
+const stepProgress = (index + 1) / workflowSteps.length;
+if (scrollProgress >= stepProgress) {
+step.classList.add('highlighted');
+} else {
+step.classList.remove('highlighted');
+}
+});
+
+// Activate line glow based on scroll
+if (scrollProgress > 0.1 && scrollProgress < 0.9) {
+workflowLine.classList.add('active');
+} else {
+workflowLine.classList.remove('active');
+}
+}
+}
+
+// Add hover interaction for challenge cards
+const challengeCards = challengesSection.querySelectorAll('.challenge-card');
+challengeCards.forEach(card => {
+card.addEventListener('mouseenter', function() {
+// Optional: Add any additional hover behavior here
+});
+
+card.addEventListener('mouseleave', function() {
+// Optional: Reset any hover behavior here
+});
+});
+
+// Add hover interaction for solution cards
+const solutionCards = solutionSection.querySelectorAll('.solution-card');
+solutionCards.forEach(card => {
+card.addEventListener('mouseenter', function() {
+// Optional: Add any additional hover behavior here
+});
+
+card.addEventListener('mouseleave', function() {
+// Optional: Reset any hover behavior here
+});
+});
+
+// Testimonials Section Animations
+const testimonialsSection = document.getElementById('testimonials');
+let testimonialsAnimated = false;
+let testimonialsExiting = false;
+
+function handleTestimonialsAnimation() {
+const rect = testimonialsSection.getBoundingClientRect();
+const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+const isPastSection = rect.top < -rect.height * 0.5;
+
+if (isVisible && !testimonialsAnimated) {
+testimonialsSection.classList.add('visible');
+testimonialsAnimated = true;
+testimonialsExiting = false;
+
+// Initialize testimonials slider
+initTestimonialsSlider();
+
+} else if (isPastSection && testimonialsAnimated && !testimonialsExiting) {
+testimonialsSection.classList.add('exiting');
+testimonialsExiting = true;
+
+} else if (!isPastSection && testimonialsExiting) {
+testimonialsSection.classList.remove('exiting');
+testimonialsExiting = false;
+}
+}
+
+// Testimonials Slider Functionality
+let currentTestimonial = 0;
+let testimonialInterval;
+let testimonialTimeout;
+
+function initTestimonialsSlider() {
+const testimonials = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.testimonial-dot');
+const prevBtn = document.querySelector('.testimonial-prev');
+const nextBtn = document.querySelector('.testimonial-next');
+
+if (!testimonials.length) return;
+
+// Set first testimonial as active
+showTestimonial(0);
+
+// Auto-slider every 6 seconds
+startTestimonialAutoSlider();
+
+// Manual navigation
+prevBtn?.addEventListener('click', () => {
+stopTestimonialAutoSlider();
+showTestimonial(currentTestimonial - 1);
+startTestimonialAutoSlider();
+});
+
+nextBtn?.addEventListener('click', () => {
+stopTestimonialAutoSlider();
+showTestimonial(currentTestimonial + 1);
+startTestimonialAutoSlider();
+});
+
+// Dot navigation
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+stopTestimonialAutoSlider();
+showTestimonial(index);
+startTestimonialAutoSlider();
+});
+});
+
+// Pause on hover
+const sliderContainer = document.querySelector('.testimonials-slider-container');
+sliderContainer?.addEventListener('mouseenter', stopTestimonialAutoSlider);
+sliderContainer?.addEventListener('mouseleave', startTestimonialAutoSlider);
+}
+
+function showTestimonial(index) {
+const testimonials = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.testimonial-dot');
+const track = document.querySelector('.testimonials-track');
+
+if (!testimonials.length) return;
+
+// Wrap around
+if (index < 0) index = testimonials.length - 1;
+if (index >= testimonials.length) index = 0;
+
+// Remove active class from all
+testimonials.forEach(t => t.classList.remove('active'));
+dots.forEach(d => d.classList.remove('active'));
+
+// Add active class to current
+testimonials[index].classList.add('active');
+dots[index]?.classList.add('active');
+
+// Move track
+if (track) {
+track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+currentTestimonial = index;
+}
+
+function startTestimonialAutoSlider() {
+testimonialInterval = setInterval(() => {
+showTestimonial(currentTestimonial + 1);
+}, 6000); // 6 seconds
+}
+
+function stopTestimonialAutoSlider() {
+clearInterval(testimonialInterval);
+}
+
+window.addEventListener('scroll', function() {
+handleChallengesAnimation();
+handleSolutionAnimation();
+handleUsersAnimation();
+handleImplementationAnimation();
+handleTestimonialsAnimation();
+handleParallaxScroll();
+handleWorkflowLineGlow();
+});
+
+// Initial check in case sections are already visible
+handleChallengesAnimation();
+handleSolutionAnimation();
+handleUsersAnimation();
+handleImplementationAnimation();
+handleTestimonialsAnimation();
+handleParallaxScroll();
+handleWorkflowLineGlow();
+
+// Add smooth scroll behavior for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+
+// Persona Card Spotlight View Functionality
+const personaCards = document.querySelectorAll('.persona-card');
+const spotlightOverlay = document.getElementById('spotlight-overlay');
+let currentSpotlight = null;
+
+function openSpotlight(card) {
+    if (currentSpotlight) {
+        closeSpotlight();
+    }
+
+    currentSpotlight = card;
+    card.classList.add('spotlight');
+    spotlightOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Add entrance animation
+    requestAnimationFrame(() => {
+        card.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+}
+
+function closeSpotlight() {
+    if (currentSpotlight) {
+        currentSpotlight.classList.remove('spotlight');
+        currentSpotlight.style.transform = '';
+        currentSpotlight = null;
+    }
+
+    spotlightOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Add click events to persona cards
+personaCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+        // Don't open spotlight if clicking on close button
+        if (e.target.classList.contains('spotlight-close')) {
+            closeSpotlight();
+            return;
+        }
+
+        // Only open spotlight if clicking on the illustration area
+        const illustration = card.querySelector('.persona-illustration');
+        if (illustration && (illustration.contains(e.target) || e.target === illustration)) {
+            openSpotlight(card);
+        }
+    });
+});
+
+// Close spotlight when clicking overlay
+spotlightOverlay.addEventListener('click', closeSpotlight);
+
+// Close spotlight with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && currentSpotlight) {
+        closeSpotlight();
+    }
+});
+
+// Performance optimization: Pause parallax when tab is not visible
+document.addEventListener('visibilitychange', function() {
+if (document.hidden) {
+// Parallax is automatically paused when tab is not visible
+} else {
+// Resume parallax when tab becomes visible
+currentX = 0;
+currentY = 0;
+mouseX = 0;
+mouseY = 0;
+}
+});
+});
+</script>
+
+</body></html>

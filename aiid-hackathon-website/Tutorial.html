@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💡 The "Build Like a Human" Philosophy: Momentum Over Perfection</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4F46E5',
+secondary: '#94A3B8'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+font-family: 'Inter', sans-serif;
+min-height: 1024px;
+background-color: #FFFFFF;
+}
+.font-pacifico {
+font-family: 'Pacifico', cursive;
+}
+.card-hover:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+.icon-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1000;
+justify-content: center;
+align-items: center;
+}
+.modal-content {
+background-color: white;
+border-radius: 16px;
+width: 90%;
+max-width: 800px;
+max-height: 90vh;
+overflow-y: auto;
+position: relative;
+}
+.close-modal {
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 24px;
+cursor: pointer;
+width: 32px;
+height: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: background-color 0.2s;
+}
+.close-modal:hover {
+background-color: #f1f1f1;
+}
+.modal-body {
+padding: 40px;
+padding-top: 60px;
+}
+.modal-body h2 {
+font-size: 28px;
+margin-bottom: 20px;
+}
+.modal-body p {
+margin-bottom: 16px;
+line-height: 1.6;
+}
+.modal-body ul {
+padding-left: 20px;
+margin-bottom: 20px;
+}
+.modal-body li {
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Header -->
+<header class="flex items-center justify-between px-8 py-6 border-b border-gray-200">
+<div class="flex items-center">
+<img src="pig_logo.png" alt="Logo" class="h-10 rounded-full border-2 border-gray-300">
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Tutorials</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Community</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-gray-600 hover:text-primary transition-colors">Sign In</button>
+<button class="!rounded-button bg-primary text-white px-4 py-2 whitespace-nowrap hover:bg-indigo-700 transition-colors">Get Started</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto px-8 py-16 text-center">
+<h1 class="text-4xl md:text-5xl font-bold mb-6">💡 The "Build Like a Human" Philosophy: Momentum Over Perfection</h1>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+A practical approach to coding that prioritizes progress over perfection. Learn how to build software with confidence by embracing imperfection, moving fast, and focusing on what truly matters.
+</p>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-6xl mx-auto px-8 pb-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal1">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-compass text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🧭 Start With One Honest Sentence — Your North Star</h3>
+<p class="text-gray-600">Before the roadmap, write the promise—clear, testable, and taped above your editor.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal2">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-bolt text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">⚡️ Make It Move — Even If It's Ugly</h3>
+<p class="text-gray-600">One click, one animation, one spark of life beats a hundred still mockups.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal3">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-database text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🧹 Let your data be messy—until it matters.</h3>
+<p class="text-gray-600">Start with guesses, learn from corrections, and evolve in the open.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal4">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-save text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">💾 Save just enough to earn trust.</h3>
+<p class="text-gray-600">People forgive bugs—they don't forgive losing their work.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal5">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-graduation-cap text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🧠 Talk to your model like a student, not a system.</h3>
+<p class="text-gray-600">Short, kind prompts with one clear goal always win.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal6">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-mobile-alt text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">📱 Design for thumbs, not cursors.</h3>
+<p class="text-gray-600">Desktops are generous—phones are honest.</p>
+</div>
+<!-- Card 7 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal7">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-video text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🎥 Show the moment before you explain the mission.</h3>
+<p class="text-gray-600">A 10-second demo unlocks better feedback than 10 slides ever will.</p>
+</div>
+<!-- Card 8 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal8">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-wrench text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🪛 Fix only what matters—let the rest go.</h3>
+<p class="text-gray-600">Not every problem deserves a perfect solution—some just need a gentler path.</p>
+</div>
+<!-- Card 9 -->
+<div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover transition-all duration-300" data-modal="modal9">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+<i class="fas fa-globe text-primary text-lg icon-wrapper"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">🌐 Build a site that shows, not sells.</h3>
+<p class="text-gray-600">One GIF, one promise, and a real face is all you need.</p>
+</div>
+</div>
+</section>
+<!-- Modals -->
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🧭 Start With One Honest Sentence — Your North Star</h2>
+<p><strong>The simplest truth is often the most powerful direction.</strong></p>
+<p><strong>🤔 What is this about?</strong></p>
+<p>Before you build anything—before writing code, designing a UI, or choosing a model—you need to define the core promise of your project in one clear, honest sentence.</p>
+<p>Not a pitch. Not a slogan. Just a single sentence that describes what your project does when it works—as plainly and concretely as possible.</p>
+<p>We call this your <strong>Minimum Viable Truth (MVT)</strong>. It's your foundation. It keeps you focused. And it helps everyone—teammates, testers, judges, and even you—understand what matters most.</p>
+<p><strong>💡 Why does it matter?</strong></p>
+<p>Because projects drift. Ideas grow too fast. People start adding features, integrations, settings, dashboards… and suddenly, no one remembers what the tool was supposed to do.</p>
+<p>But one clear sentence gives you:</p>
+<ul>
+<li>A guardrail against scope creep</li>
+<li>A rallying point for your team</li>
+<li>A filter for every design and technical decision</li>
+<li>A way to communicate value instantly to anyone watching</li>
+</ul>
+<p>If you ever feel stuck, ask:</p>
+<p><em>"Does this help deliver our one sentence?"</em></p>
+<p>If not, it goes on the backlog.</p>
+<p><strong>⏱️ When should you write it?</strong></p>
+<p>Before you write any code. Before setup, before routes, before models.</p>
+<p>Write the sentence first.</p>
+<p>If you can't describe your project clearly in one sentence, you're not ready to build yet. You might still be exploring—which is fine. But don't move forward until that core truth is nailed down.</p>
+<p><strong>🧠 How to write your one honest sentence</strong></p>
+<p>A good sentence is:</p>
+<ul>
+<li><strong>Concrete</strong> — says what the user can do and what happens</li>
+<li><strong>Demo-ready</strong> — describes something you can show by tomorrow</li>
+<li><strong>Buzzword-free</strong> — no "platforms," "solutions," or "empowering synergies"</li>
+<li><strong>Focused</strong> — captures the main interaction, not everything the project could do</li>
+</ul>
+<p><strong>📝 Use this simple template:</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:20px; font-weight:600; text-align:center; color:#92400e;">"When the user [does this], the system [does that]."</p>
+</div>
+<p><strong>✅ Examples</strong></p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">Dual-Canvas:<br>"Upload a test photo, see problems and concepts on two canvases, click one side and the other side gathers around it."</p>
+</div>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">Music Life (for AR Glasses):<br>"Your glasses play music that matches what you're doing—running pace, sunset mood, or concert lyrics."</p>
+</div>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">AI Tutor:<br>"Paste a math question, get a step-by-step walkthrough with feedback after each step."</p>
+</div>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">Task Summarizer:<br>"Drop in a long meeting transcript and get a list of action items in plain English."</p>
+</div>
+<p>If you showed someone a short video of that interaction, they'd get it. No extra explanation needed.</p>
+<p><strong>✍️ Where to use this sentence</strong></p>
+<ul>
+<li>Print it and tape it above your screen</li>
+<li>Put it at the top of your README or website</li>
+<li>Say it out loud when someone asks, "So what are you building?"</li>
+<li>Use it to test every new idea: "Does this help deliver the core promise?"</li>
+</ul>
+<p><strong>🔁 Reminder</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">If it's too vague, it won't guide you.</li>
+<li style="margin-bottom:6px;">If it's too long, no one will remember it.</li>
+<li style="margin-bottom:6px;">If it's too clever, people will miss the point.</li>
+</ul>
+</div>
+<p>The more honest and specific your sentence is, the easier everything else becomes.</p>
+</div>
+</div>
+</div>
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>⚡️ Make It Move — Even If It's Ugly</h2>
+<p><strong>Before it's polished… before it's beautiful… before it's "finished"… make the thing move.</strong></p>
+<p>That's your first breakthrough. Doesn't matter if it's rough. Doesn't matter if the design is bad or the data is fake. If it responds when you click, if something changes on screen, it's real. And once it's real—even in the ugliest way possible—you unlock everything: momentum, feedback, and belief.</p>
+<p><strong>🤔 What does "make it move" mean?</strong></p>
+<p>It means building the core interaction of your project, the one from your honest sentence, in a super simple, visual way. No fancy styling. No perfect logic. Just the bare bones of doing a thing and seeing a reaction.</p>
+<p>Something that says: "Hey, it's alive."</p>
+<p><strong>💡 Why does this matter?</strong></p>
+<p>Because motion creates emotion.</p>
+<p>A static screen, no matter how beautiful, feels dead. But when something moves—even if it's janky—people get it. They start nodding. They start giving useful feedback. And you feel it too: "Okay, this is working."</p>
+<p>That's the difference between a sketch and a prototype. And it builds confidence.</p>
+<p><strong>🕐 When should you do this?</strong></p>
+<p>Right after your one honest sentence is written.</p>
+<p>You don't need perfect UI. You don't even need real data. Just build the tiniest working version of the promise you made.</p>
+<p>Even if the whole thing is one HTML page or a messy script in a single file—if it moves, you're making progress.</p>
+<p><strong>👩‍💻 Who is this for?</strong></p>
+<p>Anyone building a project—especially under tight timelines, like a hackathon or sprint. If you're showing your project to others (judges, teammates, users), motion beats explanation every time.</p>
+<p><strong>🛠️ Examples from real builds</strong></p>
+<p><strong>🎓 Dual-Canvas MVP</strong></p>
+<p>My one-sentence promise was:</p>
+<p>"Upload a test photo, see problems and concepts on two canvases, click one side and the other side gathers around it."</p>
+<p>So I grabbed a minimal tldraw setup in Next.js and made just three things work:</p>
+<ul>
+<li>Show draggable nodes on two sides: problems and concepts</li>
+<li>When I click a node, highlight the connected ones</li>
+<li>Nudge the related nodes toward the center for a second</li>
+</ul>
+<p>That's it. No OCR. No concept tagging. But when I clicked and the other canvas responded—even just a little—people said: "Ohh, I see what this is!" That little bit of motion gave the whole project life.</p>
+<p><strong>🎵 Music Life on Rokid Glasses</strong></p>
+<p>Here, I didn't even have access to real sensors or device APIs yet. But I could still make the idea real—visually.</p>
+<p>I made a single HTML page with three labeled boxes:</p>
+<p>📦 "Running"</p>
+<p>📦 "Sunset"</p>
+<p>📦 "Concert"</p>
+<p>Each one was just a gray 16:9 container with text inside. But when I showed it to someone, they immediately got it:</p>
+<p>"Oh, these are scenes… and the glasses would play music to match them."</p>
+<p>They started imagining features before I even explained them.</p>
+<p>If you want a head start, you can literally copy-paste this placeholder box:</p>
+<pre style="background:#f5f5f5; padding:10px; border-radius:4px; margin:10px 0;"><code>&lt;div style="aspect-ratio:16/9; border:1px dashed #666; border-radius:12px; display:flex;
+          align-items:center; justify-content:center;"&gt;
+  16:9 VIDEO
+&lt;/div&gt;</code></pre>
+<p>Stick three of these on a page. Add a heading above each. That's your demo. It's not pretty, but it's powerful.</p>
+<p><strong>🏁 Summary</strong></p>
+<p>✅ <strong>What:</strong> Make your project do something, even in the simplest form</p>
+<p>✅ <strong>Why:</strong> Motion makes your project feel real and gets people engaged</p>
+<p>✅ <strong>When:</strong> Right after writing your one-sentence promise</p>
+<p>✅ <strong>Who:</strong> Anyone building fast, especially under deadlines</p>
+<p>Don't wait to perfect your UI. Don't wait for the final dataset or the full API.</p>
+<p>Build the core moment. Make it click. Make it move.</p>
+<p>The beauty can come later. The motion is what makes people believe.</p>
+</div>
+</div>
+</div>
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🧹 Keep the Data Messy — Until It Matters</h2>
+<p><em>Let it be rough. Learn as you go.</em></p>
+<p><strong>🤔 What is this about?</strong></p>
+<p>This principle is simple: don't wait for perfect data before you start building. Instead of trying to clean, label, validate, and structure everything upfront, start with messy inputs—OCR errors, vague labels, noisy sensors—and build something that works well enough to test.</p>
+<p>Treat "messy but moving" as a starting point, not a flaw.</p>
+<p>Let the system run with imperfect inputs. Let the users help clean it up. Let the process be iterative, not rigid.</p>
+<p><strong>💡 Why does this matter?</strong></p>
+<p>Because perfection is expensive—and often unnecessary at the start.</p>
+<p>If you spend days (or weeks) trying to clean every input and label every example, you may:</p>
+<ul>
+<li>Delay useful demos</li>
+<li>Avoid user testing</li>
+<li>Overfit to problems that aren't real yet</li>
+</ul>
+<p>Meanwhile, a rough system with feedback loops teaches you more:</p>
+<ul>
+<li>You see where real errors happen</li>
+<li>You find what users actually care to correct</li>
+<li>You build trust by showing your system can adapt and improve</li>
+</ul>
+<p>And most importantly: you can ship earlier.</p>
+<p><strong>⏱️ When should you use messy data?</strong></p>
+<ul>
+<li>When you're prototyping a new tool or experience</li>
+<li>When your model isn't mission-critical (yet)</li>
+<li>When the input signal is noisy but meaningful</li>
+<li>When human correction is possible, helpful, or part of the flow</li>
+</ul>
+<p>You can always clean up later. But you can't learn from what's not built.</p>
+<p><strong>🧠 How to handle messy data well</strong></p>
+<p>Use this approach:</p>
+<p><strong>1. Start with raw or semi-structured inputs</strong></p>
+<ul>
+<li>OCR text, unfiltered sensor data, screenshots, rough labels</li>
+<li>Don't worry about typos, noise, or missing fields</li>
+</ul>
+<p><strong>2. Apply a lightweight cleanup step</strong></p>
+<ul>
+<li>Ask a model to normalize or summarize it</li>
+<li>Use basic heuristics or rule-based filters</li>
+</ul>
+<p><strong>3. Make room for human correction</strong></p>
+<ul>
+<li>Add an "Edit" or "Fix" button</li>
+<li>Log corrections and learn from them</li>
+<li>Trust the user more than the algorithm</li>
+</ul>
+<p><strong>4. Label everything with confidence and source</strong></p>
+<ul>
+<li>Was it AI-generated or user-confirmed?</li>
+<li>Was it guessed or verified?</li>
+<li>Show that information clearly in the UI</li>
+</ul>
+<p><strong>🎯 Real-world examples</strong></p>
+<p><strong>🧭 Dual-Canvas</strong></p>
+<ul>
+<li>Raw input: OCR from a test photo (messy, fragmented)</li>
+<li>Cleanup: Ask an LLM to extract {question, options?, concepts[]}</li>
+<li>Tags: Use rough concepts like "algebra," "probability," "reading"</li>
+<li>Correction: Let users fix wrong tags—then save those mappings</li>
+</ul>
+<p>Now your system improves naturally, and trust goes up.</p>
+<p><strong>🎵 Music Life</strong></p>
+<ul>
+<li>Running: Use basic IMU peaks to guess cadence (no GPS needed)</li>
+<li>Sunset: Combine time of day, warm tones, and rough horizon detection</li>
+<li>Concerts: Use audio fingerprinting to guess the event—but only show lyrics if match confidence is high</li>
+</ul>
+<p>If the system's unsure, say: "Not sure—want to try again?"</p>
+<p>That honesty builds trust faster than pretending it's smart.</p>
+<p><strong>✅ TL;DR</strong></p>
+<ul>
+<li><strong>What:</strong> Use raw, messy data instead of waiting for perfect labels</li>
+<li><strong>Why:</strong> It helps you build faster and learn from real feedback</li>
+<li><strong>When:</strong> During prototyping, early demos, or when inputs are noisy</li>
+<li><strong>How:</strong> Clean lightly, label confidence, let users correct, and improve over time</li>
+</ul>
+<p>Messy is not a bug—it's a phase.</p>
+<p>Let your system evolve with real use, not hypothetical data perfection.</p>
+</div>
+</div>
+</div>
+<div id="modal4" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>💾 Save Just Enough — Keep People Safe</h2>
+<p>When you're moving fast, it's easy to forget about saving. You're testing ideas, changing layouts, rewriting code. But there's one rule that always holds:</p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">People will forgive a bug. They will not forgive losing their work.</p>
+</div>
+<p>Even if your app is early-stage or experimental, saving matters—not because you need a perfect backend, but because the people using your project need to feel safe.</p>
+<p><strong>🤔 Why is this so important?</strong></p>
+<p>Because loss of work breaks trust. If a user edits something—moves a node, selects a song, tags a video—and it disappears when they refresh or click the wrong button, that trust is hard to earn back.</p>
+<p>Even if your product is full of rough edges, a small, reliable save system says: "I respect your time."</p>
+<p>And that changes how people interact with what you've built.</p>
+<p><strong>💡 What does "just enough" saving look like?</strong></p>
+<p>You don't need a database with migrations, encryption, rollback, and access control.</p>
+<p>You just need to preserve the user's intent. That could mean:</p>
+<ul>
+<li>Saving layout position</li>
+<li>Remembering selections or tags</li>
+<li>Storing edits or preferences</li>
+<li>Tracking what's been confirmed vs. suggested</li>
+</ul>
+<p>Think small. Think local. Think repeatable.</p>
+<p><strong>Here are two different examples to make it concrete:</strong></p>
+<p><strong>🧭 Example 1: Dual-Canvas (education tool)</strong></p>
+<ul>
+<li>Save the canvas state (nodes, positions, edges) to a state.json object</li>
+<li>Use localStorage or simple backend write every 1–2 seconds (with debounce)</li>
+<li>Record whether an edge was AI-suggested or manually confirmed</li>
+<li>If someone double-clicks a connection, don't duplicate it—add a quick check to prevent that</li>
+</ul>
+<p>This isn't about security. It's about being a good host. You're saying:</p>
+<p>"I saw what you did. I won't lose it."</p>
+<p><strong>🎧 Example 2: Music Life (smart glasses music app)</strong></p>
+<ul>
+<li>Keep the user's music preferences and listening history local by default</li>
+<li>If music is being captured or context-aware analysis is running, show a visible "Pause" button</li>
+<li>Don't bury settings—respect is visible</li>
+<li>Let the user opt in to sharing scenes or uploading logs, not the other way around</li>
+</ul>
+<p>You're not building a surveillance system. You're building trust with clear boundaries and obvious controls.</p>
+<p><strong>🛠️ How can you implement this easily?</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">Use localStorage for fast front-end apps or demos</li>
+<li style="margin-bottom:6px;">Use lightweight JSON files or small cloud writes if you need multi-device sync</li>
+<li style="margin-bottom:6px;">Add a tiny timestamp to detect last autosave</li>
+<li style="margin-bottom:6px;">Add a "Saved" indicator or soft confirmation (even just a small icon or toast)</li>
+<li style="margin-bottom:6px;">Save on every small change, but with a debounce—don't flood the system</li>
+</ul>
+</div>
+<p>Bonus: most users won't even notice your save system—until it's missing. Then they'll definitely notice.</p>
+<p><strong>⏳ When should you add saving?</strong></p>
+<p>As soon as your project involves user input or state that isn't disposable.</p>
+<p>If people are clicking, editing, uploading, arranging, selecting—that's the signal.</p>
+<p>You don't need to build it first, but don't wait until the end either. Add it after your core interaction works, but before real users try it.</p>
+<p><strong>✅ Bottom Line</strong></p>
+<ul>
+<li>Saving doesn't need to be sophisticated</li>
+<li>It needs to be reliable, quiet, and respectful</li>
+<li>Do just enough to preserve the user's effort</li>
+<li>Small touches—like marking edits as "manual" vs "AI"—make a big difference</li>
+<li>Add a visible way to pause, reset, or export if the context calls for it</li>
+</ul>
+<p>Build trust first. Features come later.</p>
+<p>When people know their input won't be lost, they're willing to give you more of it.</p>
+<p>And that's the fastest way to improve your tool.</p>
+</div>
+</div>
+</div>
+<div id="modal5" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🎓 Talk to Your Model Like a Student</h2>
+<h3 style="font-size:20px; color:#4F46E5; margin-bottom:15px;">How to Guide AI with Clarity, Not Commands</h3>
+<p>When you're working with models—especially language models or agents—it's easy to fall into the trap of giving long, complicated instructions. But here's the truth:</p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-size:18px; font-weight:500;">Models respond best when you treat them like junior collaborators.</p>
+</div>
+<p>Not as magical oracles. Not as mind readers. Think of your model as a sharp student who's eager to help, but doesn't know your exact goal until you explain it—clearly, patiently, and with examples.</p>
+<p><strong>🤔 What does this actually mean?</strong></p>
+<p>It means writing prompts that are:</p>
+<ul>
+<li><strong>Short</strong> — remove fluff and ambiguity</li>
+<li><strong>Specific</strong> — say exactly what you want and what to return</li>
+<li><strong>Contextual</strong> — tell the model who it is and what role it's playing</li>
+<li><strong>Constrained</strong> — set clear expectations on format and scope</li>
+</ul>
+<p>If you can't explain your task in one paragraph and one example, the task might not be ready for prompting.</p>
+<p><strong>💡 Why this works</strong></p>
+<p>Because models are trained on human patterns. If you write your prompt like a good teacher giving an assignment—focused, structured, and kind—it gives the model a clear "lane" to stay in.</p>
+<p>You don't need to be overly technical or formal. You need to be understandable and direct.</p>
+<p>It also helps you debug your thinking. If the model fails repeatedly, check if your prompt was actually asking too many things at once.</p>
+<p><strong>⏱️ When should you write a prompt like this?</strong></p>
+<p>As soon as your system includes any task that uses AI to interpret, classify, rewrite, recommend, or extract meaning from input.</p>
+<p>That could be:</p>
+<ul>
+<li>Cleaning up messy OCR text</li>
+<li>Categorizing images</li>
+<li>Recommending content</li>
+<li>Extracting structured data</li>
+<li>Generating summaries or feedback</li>
+</ul>
+<p>Write the prompt before you build the UI around it. If the prompt doesn't produce the result you need, better to find out early.</p>
+<p><strong>🧠 How to write better prompts: A simple method</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;"><strong>Set the role</strong> — Tell the model what it is (e.g., tutor, recommender, extractor)</li>
+<li style="margin-bottom:6px;"><strong>Give the goal</strong> — Say exactly what task it should perform</li>
+<li style="margin-bottom:6px;"><strong>Specify the output</strong> — Show the format or structure you expect</li>
+<li style="margin-bottom:6px;"><strong>Limit the scope</strong> — Avoid open-ended instructions when possible</li>
+<li><strong>Add one example</strong> — Models copy structure. Lead by showing.</li>
+</ul>
+</div>
+<p><strong>🧭 Examples Across Domains</strong></p>
+<p><strong>📚 Dual-Canvas (Education Tool – Text Cleanup)</strong></p>
+<div style="background:#f8fafc; border-left:3px solid #94A3B8; padding:12px; margin:12px 0; border-radius:4px;">
+<p style="margin:0; font-family:monospace; font-size:14px; color:#374151;">"You are a study assistant. Your job is to clean up OCR text from test sheets. Given raw text and an image snippet, return structured content in this format: {question, options?, answer?, concept_candidates[]}. Use common, high-school level tags. If unsure, leave fields empty. Do not invent new concepts."</p>
+</div>
+<p><em>Why it works:</em></p>
+<ul>
+<li>Sets role: "study assistant"</li>
+<li>Clarifies task: clean OCR</li>
+<li>Gives structure: JSON format</li>
+<li>Limits invention: no hallucinated concepts</li>
+</ul>
+<p><strong>🎵 Music Life (Contextual Music Recommender)</strong></p>
+<div style="background:#f8fafc; border-left:3px solid #94A3B8; padding:12px; margin:12px 0; border-radius:4px;">
+<p style="margin:0; font-family:monospace; font-size:14px; color:#374151;">"You're a music recommender for smart glasses. Given the user's current activity and recent preferences, suggest 5 tracks in this format: {title, artist, BPM?, inLibrary, reason, confidence}. Prioritize songs from the user's library. The activity may be 'running', 'sunset', or 'concert'. Tailor suggestions accordingly."</p>
+</div>
+<p><em>Why it works:</em></p>
+<ul>
+<li>Clear persona: recommender for wearables</li>
+<li>Limited domain: only 3 activity types</li>
+<li>Prioritizes user data: prefer library</li>
+<li>Gives concrete structure</li>
+</ul>
+<p><strong>🔍 Research Assistant (Document Summarization)</strong></p>
+<div style="background:#f8fafc; border-left:3px solid #94A3B8; padding:12px; margin:12px 0; border-radius:4px;">
+<p style="margin:0; font-family:monospace; font-size:14px; color:#374151;">"You are a technical summarizer. Given a PDF page and a goal, return a one-paragraph summary focused only on content relevant to that goal. Do not repeat full sentences from the original text. Use plain language."</p>
+</div>
+<p><em>Why it works:</em></p>
+<ul>
+<li>Narrow focus: summarize for a goal</li>
+<li>Style instruction: plain, not academic</li>
+<li>Behavior guidance: don't copy sentences</li>
+</ul>
+<p><strong>🗂️ Data Classifier (Customer Support Emails)</strong></p>
+<div style="background:#f8fafc; border-left:3px solid #94A3B8; padding:12px; margin:12px 0; border-radius:4px;">
+<p style="margin:0; font-family:monospace; font-size:14px; color:#374151;">"You are an email triage assistant. Your job is to classify support emails into one of: Billing, Technical Issue, Feature Request, or Other. Return only the label. If multiple are present, pick the most urgent."</p>
+</div>
+<p><em>Why it works:</em></p>
+<ul>
+<li>Role defined: assistant</li>
+<li>Limited output space: 4 options</li>
+<li>Action logic: choose most urgent</li>
+</ul>
+<p><strong>🛠 What to do when the model fails</strong></p>
+<p>Even great prompts won't always work perfectly. When that happens:</p>
+<ul>
+<li><strong>Shrink the task:</strong> Break it into smaller steps
+<br>Instead of "extract and explain," try just "extract."</li>
+<li><strong>Tighten the format:</strong> Add stronger structure or input cues
+<br>Use ### Input: and ### Output: to separate sections clearly.</li>
+<li><strong>Remove distractions:</strong> Simplify your input—less noise, more signal
+<br>Cut out unnecessary metadata or unrelated context.</li>
+<li><strong>Switch personas:</strong> Try rewording the role (e.g., "grader," "coach," "summarizer")
+<br>Some models respond better to simpler metaphors.</li>
+<li><strong>Give an example:</strong> Few-shot prompts often outperform long instructions
+<br>Show the output you expect once, then ask it to follow.</li>
+</ul>
+<p><strong>✍️ TL;DR: What to Remember</strong></p>
+<ul>
+<li>Talk to your model like you're briefing a new intern</li>
+<li>Be short, focused, and clear about what matters</li>
+<li>Always define output format and avoid ambiguity</li>
+<li>Start narrow and grow only after it works</li>
+<li>One good example beats ten paragraphs of instructions</li>
+</ul>
+<p>When your prompts are kind, clear, and scoped, your models will surprise you—in a good way.</p>
+<p>Not because they're magic. But because they finally know what you're asking.</p>
+</div>
+</div>
+</div>
+<div id="modal6" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>📱 Remember the Phone</h2>
+<h3 style="font-size:20px; color:#4F46E5; margin-bottom:15px;">Designing for Thumbs, Not Just Mice</h3>
+<p>When building new projects, most of us design and test on laptops. That's where we code, preview layouts, and run demos. But in the real world, many users are on their phones—smaller screens, limited space, and one-thumb control.</p>
+<p>What works fine with a mouse can feel frustrating or broken on mobile.</p>
+<p><strong>🤔 What is this about?</strong></p>
+<p>This is about making sure your app feels usable and calm on a phone. That means:</p>
+<ul>
+<li>Bigger touch targets</li>
+<li>Simple, clear labels</li>
+<li>Fewer steps</li>
+<li>And controls where people can actually reach them</li>
+</ul>
+<p>Even rough prototypes deserve mobile attention.</p>
+<p><strong>💡 Why does this matter?</strong></p>
+<p>Because mobile is the real test. Users may be:</p>
+<ul>
+<li>Holding their phone with one hand</li>
+<li>Walking, commuting, or distracted</li>
+<li>Tapping quickly, not precisely</li>
+</ul>
+<p>If your app requires perfect taps, tiny icons, or long menus, it creates friction. And if users lose patience, they won't return.</p>
+<p>A mobile-aware interface says: "I understand where you are and how you use your device."</p>
+<p><strong>⏱️ When should you think about this?</strong></p>
+<p>From the beginning. Not as a final polish, but as a baseline.</p>
+<p>Ask early:</p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">Could this work one-handed?</li>
+<li style="margin-bottom:6px;">Are the main buttons easy to reach?</li>
+<li>Can someone figure it out in 5 seconds?</li>
+</ul>
+</div>
+<p>Waiting until the end makes fixing harder. Respect mobile from day one.</p>
+<p><strong>👤 Who is this for?</strong></p>
+<p>Anyone building tools that involve:</p>
+<ul>
+<li>Touchscreens or wearables</li>
+<li>On-the-go usage (like fitness, notes, maps, AR)</li>
+<li>Visual interfaces like canvases, dashboards, or HUDs</li>
+</ul>
+<p>Even technical tools should consider how they feel on a phone—even if they're not fully optimized.</p>
+<p><strong>🛠️ How to make your app feel mobile-ready</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;"><strong>Enlarge buttons:</strong> Make them tappable, not clickable. Aim for 44px minimum.</li>
+<li style="margin-bottom:6px;"><strong>Add spacing:</strong> Don't cram elements. Give room for thumbs.</li>
+<li style="margin-bottom:6px;"><strong>Label actions clearly:</strong> Avoid mystery icons. Use verbs like "Save," "Next," "Retry."</li>
+<li style="margin-bottom:6px;"><strong>Keep controls in the lower half:</strong> That's where thumbs naturally rest.</li>
+<li><strong>Show one thing at a time:</strong> Don't overwhelm. One clear focus per screen is enough.</li>
+</ul>
+</div>
+<p><strong>🧪 Real Examples</strong></p>
+<p>In a study tool I built, I added a "magnifier mode" to help users tap tiny nodes on a canvas—made it actually usable on phones.</p>
+<p>For a music overlay on smart glasses, I kept it to one lyric line at a time, shown low in the field of view, with big buttons like "Keep pace" and "Next."</p>
+<p>Even small tweaks like these made the whole experience smoother and more trusted.</p>
+</div>
+</div>
+</div>
+<div id="modal7" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🎥 Show, Don't Insist</h2>
+<h3 style="font-size:20px; color:#4F46E5; margin-bottom:15px;">Let Your Project Speak First</h3>
+<p><strong>🤔 What does it mean?</strong></p>
+<p>Before you explain what your project does, show it doing something—something real, useful, and ideally moving.</p>
+<p>Don't lead with your pitch. Don't open with your architecture diagram. Instead, lead with a moment:</p>
+<ul>
+<li>A click that triggers an animation</li>
+<li>A sentence that becomes music</li>
+<li>A camera view that overlays lyrics</li>
+</ul>
+<p>If someone can watch your tool work—even for five seconds—they'll get it before you say a word.</p>
+<p><strong>💡 Why does it matter?</strong></p>
+<p>Because people understand faster when they see value.</p>
+<p>Motion and interaction build trust and curiosity. Long explanations don't.</p>
+<p>When someone watches your tool act in the world, their brain switches from "What is this?" to "Oh, cool—what else can it do?" And now, instead of doubting, they're imagining.</p>
+<p>That's when feedback becomes useful. You've shown, not told. They're ready to talk.</p>
+<p><strong>⏱️ When should you show it?</strong></p>
+<p>Before you ask for feedback, share a link, or demo to anyone.</p>
+<p>A short video or animation should come before the README, before the slide deck, before the deep dive.</p>
+<p>Even one clear clip—5–10 seconds—is enough to unlock real interest.</p>
+<p><strong>🧠 How to do it well</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;"><strong>Pick one moment of transformation</strong></li>
+<li style="margin-bottom:6px;"><strong>"User taps → system reacts"</strong></li>
+<li style="margin-bottom:6px;"><strong>"User uploads → result appears"</strong></li>
+<li style="margin-bottom:6px;"><strong>Keep it short:</strong> 5–10 seconds max</li>
+<li style="margin-bottom:6px;"><strong>Add a caption:</strong> One sentence explaining the benefit</li>
+<li><strong>Let the tool lead:</strong> Skip narration unless needed</li>
+</ul>
+</div>
+<p><strong>🎬 Examples</strong></p>
+<p><strong>🧭 Dual-Canvas</strong></p>
+<p><em>Clip:</em> User clicks a test question, related concept nodes gather around it.</p>
+<p><em>Caption:</em> "Click a problem → see connected concepts move in."</p>
+<p><strong>🎵 Music Life</strong></p>
+<p><em>Clip 1:</em> Running triggers a beat-matched track.</p>
+<p><em>Clip 2:</em> Sunset triggers ambient music.</p>
+<p><em>Clip 3:</em> Concert view shows live lyrics.</p>
+<p><em>Captions:</em></p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">"Run → music syncs to your pace."</li>
+<li style="margin-bottom:6px;">"Sunset → ambient score fades in."</li>
+<li>"Concert → lyrics overlay appears."</li>
+</ul>
+</div>
+<p>No talking. No explaining. Just small, specific moments of payoff.</p>
+<p><strong>🧰 Tools to try</strong></p>
+<ul>
+<li>Use Loom, CleanShot, or just screen record + text overlay</li>
+<li>Export as MP4 or GIF for easy sharing</li>
+<li>For physical or wearable demos, even a phone-recorded clip works</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="modal8" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🛠️ Things That Broke (and How I Let Them Go)</h2>
+<h3 style="font-size:20px; color:#4F46E5; margin-bottom:15px;">Sometimes the Smartest Fix Is Letting Go</h3>
+<p><strong>🤔 What is this about?</strong></p>
+<p>Every project breaks somewhere. A feature doesn't behave. A model won't converge. A UI feels wrong. And your first instinct might be to fix it from scratch—to dive in, control every part, and "do it right."</p>
+<p>But sometimes, the better move is to let go, use what's already working, and move forward.</p>
+<p>Progress doesn't always come from solving hard problems. Sometimes it comes from skipping them.</p>
+<p>This isn't laziness. It's judgment: knowing what's worth your time, and what isn't—especially when you're building fast.</p>
+<p><strong>💡 Why does it matter?</strong></p>
+<p>Because energy is limited. Time is limited. In early-stage builds, you can't afford to fight every battle. If you're stuck on a "clever fix" for too long, the rest of the product suffers.</p>
+<p>Letting go of stubborn ideas doesn't mean giving up—it means protecting your momentum.</p>
+<p><strong>⏱️ When should you do this?</strong></p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">When you've spent more than a few hours on a non-critical feature</li>
+<li style="margin-bottom:6px;">When a built-in tool already does 80% of what you need</li>
+<li style="margin-bottom:6px;">When your solution adds complexity but not clarity</li>
+<li>When no user has ever asked for the thing you're stuck on</li>
+</ul>
+</div>
+<p><strong>🧠 Examples — What Broke and What I Did Instead</strong></p>
+<p><strong>🔁 I tried building my own undo/redo stack.</strong></p>
+<p>I wanted full control. But after three hours of debugging state syncing, I checked the library again… and found it had a built-in undo manager.</p>
+<p>I used it. It worked. Peace returned.</p>
+<p><strong>⚠️ Users double-clicked too fast → duplicate connections.</strong></p>
+<p>At first, I wrote a debounce handler. Then I tried locking the UI briefly. It got messy. In the end, I added a simple uniqueness rule: no duplicate edges allowed.</p>
+<p>That one line fixed everything.</p>
+<p><strong>📍 Tiny canvas nodes = missed taps on mobile.</strong></p>
+<p>I thought about designing larger nodes… but then the desktop layout broke. I added a "magnifier mode": zoom in to a small region when you tap a button. It took 20 minutes. Worked great.</p>
+<p>Sometimes the answer isn't "make it perfect"—it's "make it selectable."</p>
+<p><strong>🎤 Concert audio was noisy—too many false lyric matches.</strong></p>
+<p>I tried denoising. I tweaked confidence thresholds. It still hallucinated.</p>
+<p>So I flipped the logic: only show lyrics if the match is confident. If not, say "Can't match—try again." Trust rose instantly.</p>
+<p>Users don't mind missing a moment. They mind being lied to.</p>
+<p><strong>🤖 A model kept circling the same bug.</strong></p>
+<p>No matter how I adjusted the prompt, it looped or hallucinated. I switched to a different model—clean result in one try. No drama. Just done.</p>
+<p><strong>⛓️ Tried to auto-link every node in the canvas with ML.</strong></p>
+<p>It was clever. It looked good in theory. But the links were noisy, and users kept asking for simpler controls.</p>
+<p>I added manual linking with AI suggestions. Now it's collaborative, not automatic—and people trust it more.</p>
+<p><strong>✅ The mindset</strong></p>
+<ul>
+<li>Let the library help you.</li>
+<li>Let the system say "I don't know."</li>
+<li>Let the user correct it, instead of guessing perfectly.</li>
+<li>Let a simpler version live—just long enough to learn.</li>
+</ul>
+<p><strong>✍️ Bottom Line</strong></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<ul style="margin:0; padding-left:20px;">
+<li style="margin-bottom:6px;">Not every solution needs to be elegant.</li>
+<li style="margin-bottom:6px;">Not every failure needs to be fixed completely.</li>
+<li style="margin-bottom:6px;">Sometimes the best way to solve a problem is to step around it.</li>
+</ul>
+</div>
+<p>Progress isn't about perfection.</p>
+<p>It's about movement.</p>
+</div>
+</div>
+</div>
+<div id="modal9" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="modal-body">
+<h2>🌐 When It's Time to Make a Site</h2>
+<h3 style="font-size:20px; color:#4F46E5; margin-bottom:15px;">Show what's working, share what matters</h3>
+<p><strong>🤔 What is this about?</strong></p>
+<p>You've built something real. Now you need to present it clearly—to judges, friends, collaborators, or curious visitors. That's where a simple project site comes in.</p>
+<p>Your website isn't a brochure. It's a quiet invitation to explore:</p>
+<p>"Here's what this does. Here's who built it. Here's how to try it."</p>
+<p>You don't need fancy graphics or a clever domain name. You just need a clear structure and a few honest moments that help people understand what you made—and why it matters.</p>
+<p><strong>💡 Why make a site?</strong></p>
+<p>Because a good website:</p>
+<ul>
+<li>Gives people something they can explore on their own</li>
+<li>Makes your work look thoughtful, even if it's early-stage</li>
+<li>Helps others understand and remember your project</li>
+<li>Gives a central place for demos, team info, and documentation</li>
+</ul>
+<p>Most importantly, it makes your project sharable. If you send a link to someone, they can quickly see, feel, and follow your idea—without needing you to explain it live.</p>
+<p><strong>⏱️ When should you make it?</strong></p>
+<div style="background:#f0f7ff; border-left:4px solid #4F46E5; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0;">As soon as your core interaction works and you can record or screenshot it.</p>
+</div>
+<p>That doesn't mean the project has to be "done"—just real enough to show.</p>
+<p>If your main feature is live, and you've written your one-sentence promise, it's time to wrap it with a site.</p>
+<p><strong>🧠 How to structure your site (with examples)</strong></p>
+<p>You don't need five pages of marketing. You just need a few sections that match your user's curiosity:</p>
+<p><strong>🏠 Home</strong></p>
+<p>This is where people land, and it should show the heart of the project right away.</p>
+<p>Include:</p>
+<ul>
+<li>Your core promise(s) — 1 sentence per tool</li>
+<li>A short demo video or looping GIF of your key moment (e.g. a click-and-gather animation for Dual-Canvas)</li>
+<li>A link to explore deeper (e.g. "See Music Life in action")</li>
+</ul>
+<p><em>Example layout:</em></p>
+<div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:15px; margin:15px 0; border-radius:4px;">
+<p style="margin:0; font-family:monospace; font-size:14px; color:#374151;">Home<br>
+→ "Upload a test. See problems and concepts connect."<br>
+→ [GIF of Dual-Canvas]<br>
+→ "Glasses that play music for your scene." → [Link to Music Life]</p>
+</div>
+<p><strong>👥 Team</strong></p>
+<p>Show who built it. People connect with people.</p>
+<p>Include:</p>
+<ul>
+<li>Real names and photos (even just from webcams)</li>
+<li>One sentence each: "I built the canvas logic." "I trained the recommendation model."</li>
+</ul>
+<p>This feels like a small band—not a startup pitch. And it builds trust.</p>
+<p><strong>🎬 Project Pages (One per feature/tool)</strong></p>
+<p>Make a page for each major part of the project:</p>
+<ul>
+<li>Dual-Canvas</li>
+<li>Music Life</li>
+<li>Any other tool or demo</li>
+</ul>
+<p>Each page should show:</p>
+<ul>
+<li>What it does (1–2 sentences)</li>
+<li>A demo clip or image</li>
+<li>A bit of context: How does it work? Why is it useful?</li>
+<li>Optional: a "Try it" button or link to source</li>
+</ul>
+<p><strong>💬 Communication or Media</strong></p>
+<p>This is where you drop your blog post, dev notes, or user quotes.</p>
+<p><em>Example content:</em></p>
+<ul>
+<li>A 2-minute behind-the-scenes writeup</li>
+<li>Short demo clips</li>
+<li>Screenshots of real user comments ("This saved me an hour.")</li>
+</ul>
+<p>Honest beats polished. A photo of a whiteboard sketch is better than an empty design section.</p>
+<p><strong>A good site doesn't sell—it shows.</strong></p>
+<p>Let people see the magic. Then let them click deeper if they want more.</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="border-t border-gray-200 py-12 px-8">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<img src="pig_logo.png" alt="Logo" class="h-10 mb-2 rounded-full border-2 border-gray-300">
+<p class="text-gray-600">Building software like a human — one imperfect step at a time.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Documentation</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Community</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Support</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+© 2023 Build Like a Human. All rights reserved.
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const cards = document.querySelectorAll('[data-modal]');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close-modal');
+cards.forEach(card => {
+card.addEventListener('click', function() {
+const modalId = this.getAttribute('data-modal');
+const modal = document.getElementById(modalId);
+if (modal) {
+modal.style.display = 'flex';
+}
+});
+});
+closeButtons.forEach(button => {
+button.addEventListener('click', function() {
+const modal = this.closest('.modal');
+if (modal) {
+modal.style.display = 'none';
+}
+});
+});
+modals.forEach(modal => {
+modal.addEventListener('click', function(e) {
+if (e.target === modal) {
+modal.style.display = 'none';
+}
+});
+});
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+modals.forEach(modal => {
+modal.style.display = 'none';
+});
+}
+});
+});
+</script>
+</body>
+</html>
